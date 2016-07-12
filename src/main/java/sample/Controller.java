@@ -8,7 +8,7 @@ import javafx.scene.image.ImageView;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.Pane;
 import java.util.ArrayList;
-
+import static java.util.Objects.isNull;
 
 public class Controller {
 
@@ -42,7 +42,7 @@ public class Controller {
     @FXML
     private void initialize(){
         ObservableList allChildren = board.getChildren();
-        ArrayList<Pane> array = new ArrayList<Pane>();
+        ArrayList<Pane> array = new ArrayList<>();
         matrix = new Box[8][8];
         int n = 0;
         for(int i = 0; i < 8; i++)
@@ -210,7 +210,7 @@ public class Controller {
                         break;
                     }
                 }
-            if (nowBox == null || (thisBox.name != null && thisBox.white == this.white)){
+            if (isNull(nowBox) || (thisBox.name != null && thisBox.white == this.white)){
                 for (int i = 0; i < 8; i++)
                     for (int y = 0; y < 8; y++) {
                         if (matrix[i][y].pane.getStyle().split(" ")[1].equals("#a5f2de;") ||
@@ -235,7 +235,7 @@ public class Controller {
 
             }
 
-            if ((nowBox) != null){
+            if (!isNull(nowBox)){
 
                 System.out.println(thisBox.pane.getStyle().split(" ")[1]);
                 System.out.println(thisBox.pane.getStyle().split(" ")[1].equals("#a5f2de;"));

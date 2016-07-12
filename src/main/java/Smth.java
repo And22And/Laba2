@@ -4,16 +4,14 @@ import javafx.event.EventHandler;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
-import javafx.scene.layout.StackPane;
 import javafx.scene.layout.VBox;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
-import javafx.stage.WindowEvent;
 
 import java.io.*;
 import java.net.Socket;
 
-public class Client extends Application {
+public class Smth extends Application {
 
     Button button;
     Text text;
@@ -43,8 +41,8 @@ public class Client extends Application {
         this.button.setOnAction(new EventHandler<ActionEvent>() {
             public void handle(ActionEvent event) {
                 try {
-                    Client.this.out.write(1);
-                    Client.this.out.write(Client.this.textField.getText());
+                    Smth.this.out.write(1);
+                    Smth.this.out.write(Smth.this.textField.getText());
                 } catch (IOException e) {
                     e.printStackTrace();
                 }

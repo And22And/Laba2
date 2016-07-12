@@ -1,9 +1,12 @@
+package Server;
+
 import java.io.*;
 import java.net.Socket;
+import java.util.ArrayList;
 
 import static java.util.Objects.isNull;
 
-public class User extends Thread{
+public class User extends Thread implements Serializable{
 
     private int userId;
     private int oponentId;
@@ -102,14 +105,17 @@ public class User extends Thread{
         return str;
     }
 
+    public ArrayList<User> getAllUsers() {
+        ArrayList<User> userList = new ArrayList<>();
+        /////
+        /////
+        return userList;
+    }
+
     @Override
     public void run() {
         while (true) {
-            String str = null;
-            str = give();
-            for (int i = 0; i < Server.all.size(); i++) {
-                Server.all.get(i).send(str);
-            }
+            Parser.understandString(give());
         }
     }
 
