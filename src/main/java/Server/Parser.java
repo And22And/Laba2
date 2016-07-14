@@ -1,9 +1,9 @@
 package Server;
 
-/**
- * Created by Клиент on 12.07.2016.
- */
-public class Parser {
+
+import jdk.internal.org.xml.sax.helpers.DefaultHandler;
+
+public class Parser extends DefaultHandler{
 
     public static void understandString(String str){
 

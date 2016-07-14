@@ -1,0 +1,4 @@
+<!ELEMENT howto (userName, pasword)>
+        <!ATTLIST student userId ID>
+        <!ELEMENT userName (#PCDATA)>
+        <!ELEMENT pasword (#PCDATA)>
