@@ -3,7 +3,7 @@ package ChatServer; /**
  * (c) Svetlin Nakov, 2002
  *
  * ServerDispatcher class is purposed to listen for messages received
- * from clients and to dispatch them to all the clients connected to the
+ * from clients and to dispatch them to connectedUsers the clients connected to the
  * chat server.
  */
 
@@ -67,7 +67,7 @@ public class ServerDispatcher extends Thread
     }
 
     /**
-     * Sends given message to all clients in the client list. Actually the
+     * Sends given message to connectedUsers clients in the client list. Actually the
      * message is added to the client sender thread's message queue and this
      * client sender thread is notified.
      */
@@ -81,7 +81,7 @@ public class ServerDispatcher extends Thread
 
     /**
      * Infinitely reads messages from the queue and dispatch them
-     * to all clients connected to the server.
+     * to connectedUsers clients connected to the server.
      */
     public void run()
     {

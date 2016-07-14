@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<UserList>
+    <users>
+        <userId>10</userId>
+        <userName>Vasa</userName>
+        <pasword>007</pasword>
+        <wins>0</wins>
+        <loses>0</loses>
+        <playedGames>0</playedGames>
+    </users>
+    <users>
+        <userId>9</userId>
+        <userName>Peta</userName>
+        <pasword>006</pasword>
+        <wins>0</wins>
+        <loses>0</loses>
+        <playedGames>0</playedGames>
+    </users>
+</UserList>
