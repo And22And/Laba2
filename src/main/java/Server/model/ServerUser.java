@@ -2,6 +2,7 @@ package Server.model;
 
 import java.io.*;
 import java.net.Socket;
+import java.net.SocketException;
 import java.util.ArrayList;
 
 import static java.util.Objects.isNull;
@@ -60,7 +61,7 @@ public class ServerUser extends Thread{
         PrintWriter writer = null;
         try {
             writer = new PrintWriter(new OutputStreamWriter(this.socket.getOutputStream()));
-            writer.write(str);
+            writer.println(str);
         } catch (IOException e) {
             e.printStackTrace();
         } finally {
@@ -90,17 +91,11 @@ public class ServerUser extends Thread{
         return str;
     }
 
-    public ArrayList<User> getAllUsers() {
-        ArrayList<User> userList = new ArrayList<>();
-        /////
-        /////
-        return userList;
-    }
-
     @Override
     public void run() {
-        while (true) {
+        while (!socket.isClosed()) {
           Parser.understandString(give());
         }
+        Server.removeUser(this);
     }
 }
