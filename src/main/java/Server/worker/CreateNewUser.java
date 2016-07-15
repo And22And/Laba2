@@ -8,7 +8,7 @@ import java.util.ArrayList;
 /**
  * Created by Клиент on 12.07.2016.
  */
-public class SignIn implements Doer {
+public class CreateNewUser implements Doer {
 
 
     @Override
@@ -17,16 +17,12 @@ public class SignIn implements Doer {
         boolean isExist = false;
         for(int i = 0; i < users.size(); i++) {
             if(parameters[0].equals(users.get(i).getUserName())) {
-                if(parameters[1].equals(users.get(i).getPasword())) {
-                    isExist = true;
-                    //отправляем "все хорошо" и id(может убрать id?)
-                } else {
-                    //отправляем "неправильный пароль"
-                }
+                isExist = true;
+                //отправляем пользователя уже существует
             }
         }
         if(!isExist) {
-            //отправляем пользователя не существует
+            Server.getAllUsers().add(parameters[0], parameters[1]);
         }
     }
 }

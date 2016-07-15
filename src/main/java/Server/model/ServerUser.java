@@ -2,6 +2,7 @@ package Server.model;
 
 import java.io.*;
 import java.net.Socket;
+import java.net.SocketException;
 
 import static java.util.Objects.isNull;
 
@@ -10,13 +11,15 @@ import static java.util.Objects.isNull;
  */
 public class ServerUser extends Thread{
     private User user;
-    private int oponentId;
-    //private User oponent;  ?
+    private User oponent;
     private boolean isPlaing;
     private Socket socket;
+    private BufferedReader in;
+    private PrintWriter out;
 
     public ServerUser() {
-        super();
+
+
     }
 
     public User getUser() {
@@ -29,15 +32,20 @@ public class ServerUser extends Thread{
 
     public ServerUser(Socket socket) {
         this.socket = socket;
+        try {
+            this.in = new BufferedReader(new InputStreamReader(this.socket.getInputStream()));
+            this.out = new PrintWriter(new OutputStreamWriter(this.socket.getOutputStream()));
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 
-
-    public int getOponentId() {
-        return oponentId;
+    public User getOponent() {
+        return oponent;
     }
 
-    public void setOponentId(int oponentId) {
-        this.oponentId = oponentId;
+    public void setOponent(User oponent) {
+        this.oponent = oponent;
     }
 
     public boolean isPlaing() {
@@ -57,43 +65,32 @@ public class ServerUser extends Thread{
     }
 
     public void send(String str) {
-        PrintWriter writer = null;
-        try {
-            writer = new PrintWriter(new OutputStreamWriter(this.socket.getOutputStream()));
-            writer.println(str);
-        } catch (IOException e) {
-            e.printStackTrace();
-        } finally {
-            if(!isNull(writer)) {
-                writer.close();
-            }
-        }
+        out.println(str);
+        out.flush();
     }
 
     public String give() {
         String str = "";
-        BufferedReader reader = null;
         try {
-            reader = new BufferedReader(new InputStreamReader(this.socket.getInputStream()));
-            str = reader.readLine();
+            str = in.readLine();
+        } catch (SocketException e) {
+            try {
+                socket.close();
+            } catch (IOException e1) {
+                e1.printStackTrace();
+            }
         } catch (IOException  e) {
             e.printStackTrace();
-        } finally {
-            if(!isNull(reader)) {
-                try {
-                    reader.close();
-                } catch (IOException e) {
-                    e.printStackTrace();
-                }
-            }
         }
         return str;
     }
 
     @Override
     public void run() {
-        while (!socket.isClosed()) {
-          Parser.understandString(give());
+        while (!this.socket.isClosed()) {
+            String str = give();
+            if(!isNull(str))
+                Parser.understandString(str);
         }
         Server.removeUser(this);
     }

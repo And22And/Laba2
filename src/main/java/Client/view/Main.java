@@ -27,7 +27,8 @@ public class Main extends Application {
             this.socket = new Socket("localhost", 4444);
             in = new BufferedReader(new InputStreamReader(this.socket.getInputStream()));
             out =  new PrintWriter(new OutputStreamWriter(this.socket.getOutputStream()));
-            out.println("Hell");
+            out.println("1");
+            out.println("2");
             out.flush();
         } catch (IOException e) {
             e.printStackTrace();
