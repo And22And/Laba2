@@ -2,8 +2,6 @@ package Server.model;
 
 import java.io.*;
 import java.net.Socket;
-import java.net.SocketException;
-import java.util.ArrayList;
 
 import static java.util.Objects.isNull;
 
@@ -13,6 +11,7 @@ import static java.util.Objects.isNull;
 public class ServerUser extends Thread{
     private User user;
     private int oponentId;
+    //private User oponent;  ?
     private boolean isPlaing;
     private Socket socket;
 

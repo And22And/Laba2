@@ -18,7 +18,11 @@ public class UserList {
         return this.users;
     }
 
-    public void add(User user) {
+    public void add(String name, String password) {
+        User user = new User();
+        user.setUserName(name);
+        user.setPasword(password);
+        user.setUserId(getUsers().get(getUsers().size()-1).getUserId() + 1);
         this.users.add(user);
         UserJAXB.marshall(this);
     }

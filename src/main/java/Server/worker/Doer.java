@@ -5,6 +5,6 @@ package Server.worker;
  */
 public interface Doer {
 
-    public void doAction(String str);
+    public void doAction(String[] parameters);
 
 }

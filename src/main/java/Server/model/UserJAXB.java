@@ -57,7 +57,19 @@ public class UserJAXB {
 
 
     public static void main(String[] args) {
-        User user = new User();
+        User user = null;
+        try {
+            Class classe = Class.forName("Server.model.User");
+            try {
+                user = (User)classe.newInstance();
+            } catch (InstantiationException e) {
+                e.printStackTrace();
+            } catch (IllegalAccessException e) {
+                e.printStackTrace();
+            }
+        } catch (ClassNotFoundException e) {
+            e.printStackTrace();
+        }
         try {
             user.createUser(10, "Vasa", "007");
         } catch (ParseException e) {

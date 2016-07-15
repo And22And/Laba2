@@ -11,11 +11,19 @@ import java.util.ArrayList;
  */
 public class Server{
 
-    public static ArrayList<ServerUser> connectedUsers;
-    public static UserList allUsers;
+    private static ArrayList<ServerUser> connectedUsers;
+    private static UserList allUsers;
 
     public static void removeUser(ServerUser user) {
         connectedUsers.remove(user);
+    }
+
+    public static ArrayList<ServerUser> getConnectedUsers() {
+        return connectedUsers;
+    }
+
+    public static UserList getAllUsers() {
+        return allUsers;
     }
 
     public static void main(String[] args) {
