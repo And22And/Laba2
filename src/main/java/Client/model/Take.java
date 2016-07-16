@@ -1,7 +1,6 @@
 package Client.model;
 
 import Client.view.Main;
-import Server.model.SaxHandler;
 
 import javax.xml.parsers.SAXParser;
 import javax.xml.parsers.SAXParserFactory;

@@ -194,6 +194,19 @@ public class Controller {
 
     }
 
+    private int findIndex(Box[][] matrix , Box box){
+        int i;
+        int y;
+        for( i = 0 ; i < 8; i++)
+            for( y = 0 ; y < 8; y++){
+                if(box == matrix[i][y]){
+                    return i*10+y;
+                }
+            }
+        return -1;
+    }
+
+
 
     public void onPaneClick(Event event){
         if(nowStep) {
@@ -243,6 +256,7 @@ public class Controller {
                     nowBox.name = null;
                     nowBox.white = false;
                     nowBox = null;
+                    Send.sendStep(findIndex(matrix, nowBox), findIndex(matrix, thisBox) );
                     for (int i = 0; i < 8; i++)
                         for (int y = 0; y < 8; y++) {
                             if (matrix[i][y].pane.getStyle().split(" ")[1].equals("#a5f2de;") ||

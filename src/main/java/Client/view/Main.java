@@ -5,16 +5,15 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
-import Client.model.Distribut;
 
 import java.io.*;
 import java.net.Socket;
-import java.util.Vector;
 
 
 public class Main extends Application {
 
-    private Socket socket;
+    public static Thread distribut;
+    public static Socket socket;
     private static BufferedReader in;
     private static PrintWriter out;
 
@@ -22,6 +21,7 @@ public class Main extends Application {
 
     @Override
     public void start(Stage primaryStage) throws Exception{
+        final Thread currentThread = Thread.currentThread();
         Parent root = FXMLLoader.load(getClass().getResource("/xml/sampleLogin.fxml"));
         primaryStage.setTitle("Hello World");
         primaryStage.setScene(new Scene(root, 300, 300));
@@ -36,8 +36,30 @@ public class Main extends Application {
         } catch (Exception e) {
 //            e.printStackTrace();
         }
-        Distribut distribut = new Distribut();
-        distribut.start();
+//        Distribut distribut = new Distribut();
+//        distribut.start();
+//        this.distribut = distribut;
+
+//        final Thread thread = new Thread(new Runnable() {
+//            public void run() {
+//                for(;;){
+//
+//                    Platform.runLater(distribut);
+//                    try {
+//                        Thread.sleep(1000);
+//                    } catch (InterruptedException e) {
+//                        e.getStackTrace();
+//                    }
+//                    if(currentThread.isInterrupted()){
+//                        distribut.interrupt();
+//                    }
+//                }
+//            }
+//        });
+//        thread.start();
+
+        System.out.println(socket.isClosed());
+        System.out.println(socket.isConnected());
 
     }
 
@@ -49,8 +71,11 @@ public class Main extends Application {
         Main.in = in;
     }
 
-    public static PrintWriter getOut() {
-        return out;
+    public static void send(String message){
+        out.println(message);
+        out.flush();
+        System.out.println(message);
+        System.out.println();
     }
 
     public static void main(String[] args) {

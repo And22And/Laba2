@@ -1,6 +1,6 @@
 package Client.model.ExmpleParse;
 
-import Server.model.SaxHandler;
+import Client.model.SaxHandler;
 
 import javax.xml.parsers.SAXParser;
 import javax.xml.parsers.SAXParserFactory;
@@ -19,14 +19,14 @@ public class SaxParserExample {
                 "    <pass>"+ "010101" +"</pass>\n" +
                 "</body>";
         try {
-
+//
             FileWriter writer = new FileWriter("src//main//resources//xml//ForParse2.xml", false);
             writer.write(str);
             writer.flush();
             InputStream xmlInput = new FileInputStream( "src//main//resources//xml//ForParse2.xml" );
             SAXParser saxParser = factory.newSAXParser();
             SaxHandler handler = new SaxHandler();
-            saxParser.parse(xmlInput, handler);
+            saxParser.parse(str, handler);
             writer.close();
             System.out.println(handler.getResult()[0] + " " + handler.getResult()[1] + " " + handler.getResult()[2]);
             new File("src//main//resources//xml//ForParse2.xml" ).delete();

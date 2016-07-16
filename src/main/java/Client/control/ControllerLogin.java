@@ -11,6 +11,8 @@ import javafx.scene.control.TextField;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
 import Client.model.*;
+import Client.view.Main;
+
 import java.io.IOException;
 
 public class ControllerLogin {
@@ -25,6 +27,12 @@ public class ControllerLogin {
     @FXML
     Button button;
 
+
+    @FXML
+    private void initialize() {
+    }
+
+
     /**
      * Now we don't say about protocol.
      * That is why "Send.send...()" is commented.
@@ -35,11 +43,15 @@ public class ControllerLogin {
      */
     public void onClick() throws IOException {
         Send.sendQueryAboutIntlz(textLogin.getText(), textPass.getText());
-        System.out.println(textLogin.getText() + " " + textPass.getText());
+//        System.out.println(textLogin.getText() + " " + textPass.getText());
         // start
         Stage stageTheLabelBelongs = (Stage) button.getScene().getWindow();
         Parent root = FXMLLoader.load(getClass().getResource("/xml/lobby.fxml"));
         stageTheLabelBelongs.setScene(new Scene(root));
+//        Main.send("гоу");
+//        send("сервак");
+        System.out.println(Main.socket.isClosed());
+        System.out.println(Main.socket.isConnected());
         //end
     }
 

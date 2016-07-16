@@ -1,17 +1,12 @@
 package Client.model;
 
-import Client.model.Distribut;
 import Client.view.Main;
-
-import java.io.BufferedWriter;
-import java.io.IOException;
-import java.io.PrintWriter;
-import java.util.Vector;
 
 /**
  * Created by User on 12.07.2016.
  */
 public class Send extends Thread{
+
 
 
     public static void sendStep(int of, int into) {
@@ -21,7 +16,7 @@ public class Send extends Thread{
                 "    <positionOf>"+ of + "</positionOf>\n" +
                 "    <positionInto>"+ into +"</positionInto>\n" +
                 "</body>";
-        Distribut.addMessage(result);
+        Main.send(result);
 
     }
 
@@ -32,7 +27,16 @@ public class Send extends Thread{
                 "    <login>"+ login + "</login>\n" +
                 "    <pass>"+ pass +"</pass>\n" +
                 "</body>";
-        Distribut.addMessage(result);
+        Main.send(result);
+    }
+
+    public static void sendQueryDuel(String nameOpponent){
+        String result;
+        result = "<body>\n" +
+                "    <metaInfo>GoDuel</metaInfo>\n" +
+                "    <nameOpponent>"+ nameOpponent + "</nameOpponent>\n" +
+                "</body>";
+        Main.send(result);
     }
 
     public static void sendQueryRegistration(String login, String pass){
@@ -42,7 +46,7 @@ public class Send extends Thread{
                 "    <login>"+ login + "</login>\n" +
                 "    <pass>"+ pass +"</pass>\n" +
                 "</body>";
-        Distribut.addMessage(result);
+        Main.send(result);
     }
 
 

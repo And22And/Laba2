@@ -2,7 +2,6 @@ package Client.model;
 
 import Client.view.Main;
 
-import java.io.PrintWriter;
 import java.util.Vector;
 
 /**
@@ -10,31 +9,45 @@ import java.util.Vector;
  */
 public class Distribut extends Thread {
 
-    private PrintWriter out = Main.getOut();
 
     private static Vector mMessageQueue = new Vector();
 
     public static void addMessage(String str){
         mMessageQueue.add(str);
-//        System.out.println(mMessageQueue.toString());
     }
 
+    public synchronized String newMessage() {
+        if(mMessageQueue.size() != 0) {
+            String message = (String) mMessageQueue.get(0);
+            mMessageQueue.removeElementAt(0);
+            System.out.println(message + " +1");
+            return message;
+        }
+        return null;
+    }
 
+//    public  void send(String message){
+//        System.out.println(message);
+//        Main.send().println(message);
+//        out.flush();
+//    }
 
     @Override
     public void run(){
-        System.out.println("Лог треда");
-        while (true){
-            if(mMessageQueue.size()!=0) {
-                System.out.println("++++");
-                System.out.println(mMessageQueue.toString());
-                System.out.println("++++");
-                String message = (String) mMessageQueue.get(0);
-                mMessageQueue.removeElementAt(0);
-                out.println(message);
-                out.flush();
+//        Main.send("ssss++++");
+//        for(;;)
+//            while (mMessageQueue != null) {
+//                System.out.println("Хоть что-то");
+//                String message = newMessage();
+//                Main.send(message);
+//            }
+//        Main.send(" -- ");
+        if (mMessageQueue != null) {
+                System.out.println("Хоть что-то");
+                String message = newMessage();
+                Main.send(message);
             }
-        }
+
     }
 
 }
