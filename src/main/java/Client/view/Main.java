@@ -5,9 +5,11 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
+import Client.model.Distribut;
 
 import java.io.*;
 import java.net.Socket;
+import java.util.Vector;
 
 
 public class Main extends Application {
@@ -17,9 +19,10 @@ public class Main extends Application {
     private static PrintWriter out;
 
 
+
     @Override
     public void start(Stage primaryStage) throws Exception{
-        Parent root = FXMLLoader.load(getClass().getResource("/xml/sample2.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("/xml/sampleLogin.fxml"));
         primaryStage.setTitle("Hello World");
         primaryStage.setScene(new Scene(root, 300, 300));
         primaryStage.show();
@@ -27,14 +30,14 @@ public class Main extends Application {
             this.socket = new Socket("localhost", 4444);
             in = new BufferedReader(new InputStreamReader(this.socket.getInputStream()));
             out =  new PrintWriter(new OutputStreamWriter(this.socket.getOutputStream()));
-            out.println("1");
-            out.println("2");
-            out.flush();
+
         } catch (IOException e) {
-            e.printStackTrace();
+//            e.printStackTrace();
         } catch (Exception e) {
-            e.printStackTrace();
+//            e.printStackTrace();
         }
+        Distribut distribut = new Distribut();
+        distribut.start();
 
     }
 
@@ -48,10 +51,6 @@ public class Main extends Application {
 
     public static PrintWriter getOut() {
         return out;
-    }
-
-    public static void setOut(PrintWriter out) {
-        Main.out = out;
     }
 
     public static void main(String[] args) {

@@ -1,5 +1,10 @@
 package Server.model;
 
+import org.xml.sax.SAXException;
+
+import javax.xml.parsers.ParserConfigurationException;
+import javax.xml.parsers.SAXParser;
+import javax.xml.parsers.SAXParserFactory;
 import java.io.*;
 import java.net.Socket;
 import java.net.SocketException;
@@ -88,9 +93,37 @@ public class ServerUser extends Thread{
     @Override
     public void run() {
         while (!this.socket.isClosed()) {
-            String str = give();
-            if(!isNull(str))
-                Parser.understandString(str);
+            String str;
+            String result = "";
+            do {
+                str = give();
+                result += str + "\n";
+                System.out.println(str);
+            }while(!str.equals("</body>"));
+
+            if(!isNull(result)) {
+                System.out.println(result);
+                SAXParserFactory factory = SAXParserFactory.newInstance();
+                SAXParser saxParser = null;
+                try {
+                    FileWriter writer = new FileWriter("src//main//resources//xml//ForParse2.xml", false);
+                    writer.write(result);
+                    writer.flush();
+                    InputStream xmlInput = new FileInputStream( "src//main//resources//xml//ForParse2.xml" );
+                    saxParser = factory.newSAXParser();
+                    SaxHandler handler = new SaxHandler();
+                    saxParser.parse(xmlInput, handler);
+                    writer.close();
+                    System.out.println(handler.getResult()[0] + " " + handler.getResult()[1] + " " + handler.getResult()[2]);
+                    new File("src//main//resources//xml//ForParse2.xml" ).delete();
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }catch (ParserConfigurationException e) {
+                    e.printStackTrace();
+                } catch (SAXException e) {
+                    e.printStackTrace();
+                }
+            }
         }
         Server.removeUser(this);
     }

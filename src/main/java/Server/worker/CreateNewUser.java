@@ -16,7 +16,7 @@ public class CreateNewUser implements Doer {
         ArrayList<User> users = Server.getAllUsers().getUsers();
         boolean isExist = false;
         for(int i = 0; i < users.size(); i++) {
-            if(parameters[0].equals(users.get(i).getUserName())) {
+            if(parameters[1].equals(users.get(i).getUserName())) {
                 isExist = true;
                 //отправляем пользователя уже существует
             }

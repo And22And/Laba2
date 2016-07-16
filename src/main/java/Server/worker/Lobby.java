@@ -2,27 +2,28 @@ package Server.worker;
 
 import Server.model.Server;
 
+import java.util.Vector;
 
 
 /**
  * Created by Клиент on 12.07.2016.
  */
-public class Lobby implements Doer{
-
-//    Vector<String> lobbyQueue;
-//
-//    public String getStringFromQueue() {
-//        String str = lobbyQueue.get(0);
-//        lobbyQueue.remove(0);
-//        return str;
-//    }
+public class Lobby{
 
 
-
-    @Override
-    public synchronized void doAction(String[] parameters) {
+    public static synchronized void doAction(String str) {
         for (int i = 0; i < Server.getConnectedUsers().size(); i++) {
-            Server.getConnectedUsers().get(i).send(parameters[0]);
+            Server.getConnectedUsers().get(i).send(str);
         }
     }
+
+    public static String getFullLobby(){
+        String str = "<body>\n";
+        for(int i = 0; i < Server.getConnectedUsers().size(); i++) {
+            str += "<name>" + Server.getConnectedUsers().get(i).getName() + "</name\n";
+        }
+        str += "</body>";
+        return str;
+    }
+
 }

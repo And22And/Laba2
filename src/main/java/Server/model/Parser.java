@@ -1,36 +1,29 @@
 package Server.model;
 
-
 import Server.worker.Doer;
-import jdk.internal.org.xml.sax.helpers.DefaultHandler;
 
-public class Parser extends DefaultHandler{
+public class Parser{
 
-    public static void understandString(String str){
+    public static void callDoer(String[] str){
 
-        //Парсим строку str
-        //Разбиваем на имя класса className
-        //и параметры classParameters
-        String className = "";
-        String[] classParameters = new String[0];
         Doer doer = null;
         Class classe;
 
         try {
-            classe = Class.forName("Server.worker." + className);
+            classe = Class.forName("Server.worker." + str[0]);
             try {
                 doer = (Doer)classe.newInstance();
-            } catch (InstantiationException ie) {
+            } catch (InstantiationException e) {
 
-            } catch (IllegalAccessException iae) {
+            } catch (IllegalAccessException e) {
 
             }
 
-        } catch (ClassNotFoundException cnfe) {
+        } catch (ClassNotFoundException e) {
 
         }
-        System.out.println(str);
-        if(doer != null) doer.doAction(classParameters);
+        System.out.println(str.toString());
+        if(doer != null) doer.doAction(str);
     }
 
 }

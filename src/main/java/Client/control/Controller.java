@@ -4,6 +4,7 @@ import javafx.collections.ObservableList;
 import javafx.event.Event;
 import javafx.fxml.FXML;
 import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.Pane;
 import Client.model.*;
@@ -13,11 +14,8 @@ import static java.util.Objects.isNull;
 
 public class Controller {
 
-
-
     @FXML
     private GridPane board;
-
 
     private Image pawn = new Image("/image/pawn.png");
     private Image pawnWhite = new Image("/image/pawnWhite.png");
@@ -37,6 +35,7 @@ public class Controller {
     private Box[][] matrix;
 
     private Box nowBox;
+    private Box changedBox = new Box(new Pane(new ImageView()));
 
     private boolean nowStep = true;
 
@@ -223,13 +222,8 @@ public class Controller {
                             }
                         }
                     }
-                System.out.println(nowBox);
-                System.out.println(thisBox.white);
-                System.out.println(nowI + " " + nowY);
                 if (thisBox.white == this.white && thisBox.name != null) {
-                    System.out.println("------------");
                     ChessLogik.run(thisBox, matrix, nowI, nowY, true);
-                    System.out.println(thisBox.white + " перед передачей");
                     ChessLogik.checkOnStep(thisBox, matrix, nowI, nowY);
                     nowBox = thisBox;
                 }
@@ -237,14 +231,14 @@ public class Controller {
             }
 
             if (!isNull(nowBox)){
-
-                System.out.println(thisBox.pane.getStyle().split(" ")[1]);
-                System.out.println(thisBox.pane.getStyle().split(" ")[1].equals("#a5f2de;"));
                 if(thisBox.pane.getStyle().split(" ")[1].equals("#a5f2de;")
                         || thisBox.pane.getStyle().split(" ")[1].equals("#ff8584;")){
                     thisBox.image.setImage(nowBox.image.getImage());
                     thisBox.name = nowBox.name;
                     thisBox.white = nowBox.white;
+                    changedBox.image.setImage(nowBox.image.getImage());
+                    changedBox.name = nowBox.name;
+                    changedBox.white = nowBox.white;
                     nowBox.image.setImage(null);
                     nowBox.name = null;
                     nowBox.white = false;

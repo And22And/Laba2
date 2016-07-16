@@ -16,8 +16,8 @@ public class CheckInitialize implements Doer {
         ArrayList<User> users = Server.getAllUsers().getUsers();
         boolean isExist = false;
         for(int i = 0; i < users.size(); i++) {
-            if(parameters[0].equals(users.get(i).getUserName())) {
-                if(parameters[1].equals(users.get(i).getPasword())) {
+            if(parameters[1].equals(users.get(i).getUserName())) {
+                if(parameters[2].equals(users.get(i).getPasword())) {
                     isExist = true;
                     //отправляем "все хорошо" и id(может убрать id?)
                 } else {

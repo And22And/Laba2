@@ -1,14 +1,13 @@
-package Client.model;
+package Server.model;
 
 /**
  * Created by User on 13.07.2016.
  */
-
 import org.xml.sax.Attributes;
 import org.xml.sax.SAXException;
 import org.xml.sax.helpers.DefaultHandler;
 
-import java.util.Stack;
+import java.util.*;
 
 /**
 
@@ -42,7 +41,7 @@ public class SaxHandler extends DefaultHandler {
         String value = new String(ch, start, length).trim();
         if(value.length() == 0) return; // ignore white space
 
-        if("metaInfo".equals(currentElement()) && ("doStep".equals(value) || "CheckInitialize".equals(value)) ){
+        if("metaInfo".equals(currentElement()) && ("DoStep".equals(value) || "CheckInitialize".equals(value)) ){
             result = new String[3];
             nameOfClass = value;
             result[0] = value;

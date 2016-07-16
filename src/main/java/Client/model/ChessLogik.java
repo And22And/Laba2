@@ -25,7 +25,6 @@ public class ChessLogik {
     private static Image queenWhite = new Image("/image/queenWhite.png");
 
     public static void run(Box box, Box[][] matrix, int i, int y, boolean isYou){
-        System.out.println("В логике");
             ChessLogik.matrix = matrix;
         String name = box.name;
         switch (name) {
@@ -72,7 +71,6 @@ public class ChessLogik {
     }
 
     private static void pawn(Box box, int i, int y, boolean isYou){
-        System.out.println("В логике пешки");
         if(isYou){
             if((i - 1 >= 0) && (y >= 0) && (y < 8) && (i-1 < 8) && matrix[i-1][y].name == null)
                 matrix[i-1][y].pane.setStyle("-fx-background-color: #a5f2de;");
@@ -162,7 +160,6 @@ public class ChessLogik {
         while (next){
             nowI++;
             nowY++;
-            System.out.println(nowI + " " + nowY + " --- офицер");
             if(nowI < 8 && nowY < 8 ){
 
                 if( matrix[nowI][nowY].name == null ){
@@ -183,7 +180,6 @@ public class ChessLogik {
         while (next){
             nowI--;
             nowY++;
-            System.out.println(nowI + " " + nowY + " --- офицер");
             if(nowI >= 0 && nowY < 8){
                 if( matrix[nowI][nowY].name == null ){
                     matrix[nowI][nowY].pane.setStyle("-fx-background-color: #a5f2de;");
@@ -203,7 +199,6 @@ public class ChessLogik {
         while (next){
             nowI++;
             nowY--;
-            System.out.println(nowI + " " + nowY + " --- офицер");
             if(nowI < 8 && nowY >= 0) {
                 if (matrix[nowI][nowY].name == null) {
                     matrix[nowI][nowY].pane.setStyle("-fx-background-color: #a5f2de;");
@@ -223,7 +218,6 @@ public class ChessLogik {
         while (next){
             nowI--;
             nowY--;
-            System.out.println(nowI + " " + nowY + " --- офицер");
             if(nowI >= 0 && nowY >= 0) {
                 if (matrix[nowI][nowY].name == null) {
                     matrix[nowI][nowY].pane.setStyle("-fx-background-color: #a5f2de;");
@@ -245,7 +239,6 @@ public class ChessLogik {
         boolean next = true;
         while (next){
             nowY++;
-            System.out.println(nowI + " " + nowY + " --- тура");
             if(nowY < 8 ){
 
                 if( matrix[nowI][nowY].name == null ){
@@ -265,7 +258,6 @@ public class ChessLogik {
         nowY = y;
         while (next){
             nowI--;
-            System.out.println(nowI + " " + nowY + " --- тура");
             if(nowI >= 0){
                 if( matrix[nowI][nowY].name == null ){
                     matrix[nowI][nowY].pane.setStyle("-fx-background-color: #a5f2de;");
@@ -284,7 +276,6 @@ public class ChessLogik {
         nowY = y;
         while (next){
             nowI++;
-            System.out.println(nowI + " " + nowY + " --- тура");
             if(nowI < 8) {
                 if (matrix[nowI][nowY].name == null) {
                     matrix[nowI][nowY].pane.setStyle("-fx-background-color: #a5f2de;");
@@ -303,7 +294,6 @@ public class ChessLogik {
         nowY = y;
         while (next){
             nowY--;
-            System.out.println(nowI + " " + nowY + " --- тура");
             if(nowY >= 0) {
                 if (matrix[nowI][nowY].name == null) {
                     matrix[nowI][nowY].pane.setStyle("-fx-background-color: #a5f2de;");
@@ -402,10 +392,6 @@ public class ChessLogik {
         for(int i = 0 ; i < 8; i++)
             for(int y = 0 ; y < 8; y++){
                 if(tmpMatrix[i][y].name != null && tmpMatrix[i][y].white == white){
-                    System.out.println(kingI + " " + kingY);
-                    System.out.println("координаты короля");
-                    System.out.println(white);
-                    System.out.println("+1" + i + " " + y);
                     run(tmpMatrix[i][y], tmpMatrix, i, y, false);
                     if(tmpMatrix[kingI][kingY].pane.getStyle().split(" ")[1].equals("#ff8584;"))
                         return true;
@@ -435,14 +421,6 @@ public class ChessLogik {
                 tmpMatrix = swichMatrix(matrixPr);
                 if (tmpMatrix[k][s].pane.getStyle().split(" ")[1].equals("#a5f2de;") ||
                         tmpMatrix[k][s].pane.getStyle().split(" ")[1].equals("#ff8584;")){
-                    System.out.println("Проверка на шах королю при ходе");
-                    System.out.println("-------------------------------");
-                    System.out.println(k + "   ------------------  " + s);
-                    System.out.println(matrixPr);
-                    System.out.println(matrix);
-                    System.out.println(tmpMatrix);
-                    System.out.println(matrix[0][0].pane);
-                    System.out.println(tmpMatrix[0][0].pane);
                     tmpMatrix[k][s].name = tmpMatrix[i][y].name;
                     tmpMatrix[k][s].white = tmpMatrix[i][y].white;
                     tmpMatrix[k][s].image.setImage(tmpMatrix[i][y].image.getImage());
@@ -453,26 +431,20 @@ public class ChessLogik {
                     int kingI = tmp/10;
                     int kingY = tmp%10;
                     if(checkOnShah(tmpMatrix, kingI, kingY )){
-
                         if ((k+s) % 2 == 0) {
                             matrixPr[k][s].pane.setStyle("-fx-background-color: #ffffe7;");
                         } else {
                             matrixPr[k][s].pane.setStyle("-fx-background-color: #e6a875;");
                         }
                     }
-
                 }
-
-
             }
-
     }
 
 
     private static byte findKing(Box box, Box[][] matrixPar){
         String kingName;
         byte result = 0;
-        System.out.println("findKing - цвет короля  " + box.white);
         if(box.white){
             kingName = "kingWhite";
         } else {
@@ -486,8 +458,15 @@ public class ChessLogik {
         return result;
     }
 
-//    public static void checkOnStep(Box box, Box[][] matrix, int i, int y){
-//        ChessLogik.matrix = matrix;
-//    }
+    public static void back(Box[][] matrix, Box boxOf, Box boxInto , Box changedBox ){
+            ChessLogik.matrix = matrix;
+        boxOf.image.setImage(boxInto.image.getImage());
+        boxOf.white = boxInto.white;
+        boxOf.name = boxInto.name;
+        boxInto.image.setImage(changedBox.image.getImage());
+        boxInto.name = changedBox.name;
+        boxInto.white = changedBox.white;
+
+    }
 
 }

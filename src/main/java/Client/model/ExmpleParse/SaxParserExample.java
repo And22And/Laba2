@@ -1,6 +1,6 @@
 package Client.model.ExmpleParse;
 
-import Client.model.SaxHandler;
+import Server.model.SaxHandler;
 
 import javax.xml.parsers.SAXParser;
 import javax.xml.parsers.SAXParserFactory;
@@ -14,9 +14,9 @@ public class SaxParserExample {
     public static void main (String argv []) {
         SAXParserFactory factory = SAXParserFactory.newInstance();
         String str = "<body>\n" +
-                "    <metaInfo>doStep</metaInfo>\n" +
-                "    <positionOf>17</positionOf>\n" +
-                "    <positionInto>63</positionInto>\n" +
+                "    <metaInfo>CheckInitialize</metaInfo>\n" +
+                "    <login>"+ "Danil" + "</login>\n" +
+                "    <pass>"+ "010101" +"</pass>\n" +
                 "</body>";
         try {
 
