@@ -1,5 +1,7 @@
 package Server.model;
 
+import Server.worker.Lobby;
+
 import javax.xml.bind.JAXB;
 import java.io.*;
 import java.net.ServerSocket;
@@ -15,6 +17,7 @@ public class Server{
     private static UserList allUsers;
 
     public static void removeUser(ServerUser user) {
+        Lobby.LobbyChange("removeName", user.getUser().getUserName());
         connectedUsers.remove(user);
     }
 
@@ -41,7 +44,7 @@ public class Server{
                 Socket client = ss.accept();
                 System.out.println("Connected " + client.toString());
                 ServerUser user = new ServerUser(client);
-                connectedUsers.add(user);
+                //connectedUsers.add(user);
                 user.start();
             } catch (IOException e) {
                 e.printStackTrace();

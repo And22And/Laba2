@@ -14,7 +14,7 @@ public class UserJAXB {
             JAXBContext context = JAXBContext.newInstance(UserList.class);
             Marshaller marshaller = context.createMarshaller();
             marshaller.setProperty(Marshaller.JAXB_FORMATTED_OUTPUT, Boolean.TRUE);
-            marshaller.marshal(userList, new File("UserList.xml"));
+            marshaller.marshal(userList, new File("src//main//resources//UserList.xml"));
         } catch (JAXBException e) {
             e.printStackTrace();
         }
@@ -36,7 +36,7 @@ public class UserJAXB {
         try {
             JAXBContext context = JAXBContext.newInstance(UserList.class);
             Unmarshaller unmarshaller = context.createUnmarshaller();
-            userList = (UserList) unmarshaller.unmarshal(new File("UserList.xml"));
+            userList = (UserList) unmarshaller.unmarshal(new File("src//main//resources//UserList.xml"));
         } catch (JAXBException e) {
            e.printStackTrace();
         }

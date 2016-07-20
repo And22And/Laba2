@@ -1,5 +1,6 @@
 package Server.model;
 
+import Server.worker.Lobby;
 import org.xml.sax.SAXException;
 
 import javax.xml.parsers.ParserConfigurationException;
@@ -92,13 +93,13 @@ public class ServerUser extends Thread{
 
     @Override
     public void run() {
+        (new Lobby()).doAction(null, this);
         while (!this.socket.isClosed()) {
             String str;
             String result = "";
             do {
                 str = give();
                 result += str + "\n";
-                System.out.println(str);
             }while(!str.equals("</body>"));
 
             if(!isNull(result)) {
@@ -114,8 +115,9 @@ public class ServerUser extends Thread{
                     SaxHandler handler = new SaxHandler();
                     saxParser.parse(xmlInput, handler);
                     writer.close();
-                    System.out.println(handler.getResult()[0] + " " + handler.getResult()[1] + " " + handler.getResult()[2]);
+                    System.out.println(handler.getResult().toString()); //////////////
                     new File("src//main//resources//xml//ForParse2.xml" ).delete();
+                    Parser.callDoer(handler.getResult(), this);
                 } catch (IOException e) {
                     e.printStackTrace();
                 }catch (ParserConfigurationException e) {

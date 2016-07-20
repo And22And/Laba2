@@ -1,6 +1,7 @@
 package Server.worker;
 
 import Server.model.Server;
+import Server.model.ServerUser;
 import Server.model.User;
 
 import java.util.ArrayList;
@@ -10,23 +11,30 @@ import java.util.ArrayList;
  */
 public class CheckInitialize implements Doer {
 
-
     @Override
-    public void doAction(String[] parameters) {
+    public void doAction(String[] parameters, ServerUser serverUser) {
         ArrayList<User> users = Server.getAllUsers().getUsers();
         boolean isExist = false;
+        String result;
         for(int i = 0; i < users.size(); i++) {
             if(parameters[1].equals(users.get(i).getUserName())) {
-                if(parameters[2].equals(users.get(i).getPasword())) {
-                    isExist = true;
-                    //отправляем "все хорошо" и id(может убрать id?)
-                } else {
-                    //отправляем "неправильный пароль"
-                }
+                isExist = true;
+
+                result = "<body>\n" +
+                        "    <metaInfo>CheckInitialize</metaInfo>\n" +
+                        "    <isExist>"+ true + "</isExist>\n" +
+                        "    <right>"+ parameters[2].equals(users.get(i).getPasword()) + "</right>\n" +
+                        "</body>";
+                serverUser.send(result);
             }
         }
         if(!isExist) {
-            //отправляем пользователя не существует
+            result = "<body>\n" +
+                    "    <metaInfo>CheckInitialize</metaInfo>\n" +
+                    "    <isExist>"+ false + "</isExist>\n" +
+                    "    <right>"+ false + "</right>\n" +
+                    "</body>";
+            serverUser.send(result);
         }
     }
 }

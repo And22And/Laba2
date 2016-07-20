@@ -49,7 +49,13 @@ public class Send extends Thread{
         Main.send(result);
     }
 
-
+    public static void sendQueryLobb(String login, String pass){
+        String result;
+        result = "<body>\n" +
+                "    <metaInfo>Lobby</metaInfo>\n" +
+                "</body>";
+        Main.send(result);
+    }
 
 
 

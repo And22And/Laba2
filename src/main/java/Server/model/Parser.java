@@ -4,7 +4,7 @@ import Server.worker.Doer;
 
 public class Parser{
 
-    public static void callDoer(String[] str){
+    public static void callDoer(String[] str , ServerUser serverUser){
 
         Doer doer = null;
         Class classe;
@@ -22,8 +22,8 @@ public class Parser{
         } catch (ClassNotFoundException e) {
 
         }
-        System.out.println(str.toString());
-        if(doer != null) doer.doAction(str);
+        System.out.println(str.toString()); ///////////
+        if(doer != null) doer.doAction(str, serverUser);
     }
 
 }

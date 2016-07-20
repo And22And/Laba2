@@ -16,11 +16,11 @@ public class SaxHandler extends DefaultHandler {
 
     private int i = 0;
     private String nameOfClass;
-    private String[] result;
+    private ArrayList<String> result;
 
     private Stack<String> elementStack = new Stack<>();
 
-    public String[] getResult() {
+    public ArrayList<String> getResult() {
         return result;
     }
 
@@ -42,21 +42,21 @@ public class SaxHandler extends DefaultHandler {
         if(value.length() == 0) return; // ignore white space
 
         if("metaInfo".equals(currentElement()) && ("DoStep".equals(value) || "CheckInitialize".equals(value)) ){
-            result = new String[3];
+            result = new ArrayList<String>();
             nameOfClass = value;
-            result[0] = value;
+            result.set(0,value);
             i++;
         }
 
         if("metaInfo".equals(currentElement()) && ("GoDuel".equals(value)) ){
-            result = new String[2];
+            result = new ArrayList<String>();
             nameOfClass = value;
-            result[0] = value;
+            result.set(0,value);
             i++;
         }
 
-        if(result[0].equals(nameOfClass) && !value.equals(nameOfClass)){
-            result[i] = value;
+        if(result.get(0).equals(nameOfClass) && !value.equals(nameOfClass)){
+            result.add(value);
             i++;
         }
 
