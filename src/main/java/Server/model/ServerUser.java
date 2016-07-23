@@ -24,8 +24,6 @@ public class ServerUser extends Thread{
     private PrintWriter out;
 
     public ServerUser() {
-
-
     }
 
     public User getUser() {
@@ -126,6 +124,12 @@ public class ServerUser extends Thread{
                     e.printStackTrace();
                 }
             }
+        }
+        try {
+            this.in.close();
+            this.out.close();
+        } catch (IOException e) {
+            e.printStackTrace();
         }
         Server.removeUser(this);
     }

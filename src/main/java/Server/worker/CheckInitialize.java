@@ -20,13 +20,16 @@ public class CheckInitialize implements Doer {
             if (parameters.get(1).equals(users.get(i).getUserName())) {
                 if (parameters.get(2).equals(users.get(i).getPasword())) {
                     isExist = true;
-
                     result = "<body>\n" +
                             "    <metaInfo>CheckInitialize</metaInfo>\n" +
                             "    <isExist>" + true + "</isExist>\n" +
                             "    <right>" + parameters.get(2).equals(users.get(i).getPasword()) + "</right>\n" +
                             "</body>";
                     serverUser.send(result);
+                    if(parameters.get(2).equals(users.get(i).getPasword())) {
+                        Server.addUser(serverUser);
+                        serverUser.setUser(users.get(i));
+                    }
                 }
             }
         }

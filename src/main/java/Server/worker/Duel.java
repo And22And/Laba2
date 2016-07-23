@@ -9,7 +9,7 @@ import java.util.ArrayList;
 /**
  * Created by User on 21.07.2016.
  */
-public class GoDuel implements Doer {
+public class Duel implements Doer {
     @Override
     public void doAction(ArrayList parameters, ServerUser serverUser) {
         ArrayList<ServerUser> arrayUsers = Server.getConnectedUsers();

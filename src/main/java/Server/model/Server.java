@@ -21,6 +21,10 @@ public class Server{
         connectedUsers.remove(user);
     }
 
+    public static void addUser(ServerUser user) {
+        connectedUsers.add(user);
+    }
+
     public static ArrayList<ServerUser> getConnectedUsers() {
         return connectedUsers;
     }
@@ -44,7 +48,6 @@ public class Server{
                 Socket client = ss.accept();
                 System.out.println("Connected " + client.toString());
                 ServerUser user = new ServerUser(client);
-                //connectedUsers.add(user);
                 user.start();
             } catch (IOException e) {
                 e.printStackTrace();
