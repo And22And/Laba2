@@ -2,15 +2,17 @@ package Server.model;
 
 import Server.worker.Doer;
 
+import java.util.ArrayList;
+
 public class Parser{
 
-    public static void callDoer(String[] str , ServerUser serverUser){
+    public static void callDoer(ArrayList str , ServerUser serverUser){
 
         Doer doer = null;
         Class classe;
 
         try {
-            classe = Class.forName("Server.worker." + str[0]);
+            classe = Class.forName("Server.worker." + str.get(0));
             try {
                 doer = (Doer)classe.newInstance();
             } catch (InstantiationException e) {

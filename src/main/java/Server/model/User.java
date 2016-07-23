@@ -15,6 +15,30 @@ public class User {
     private int loses;
     private int playedGames;
 
+    public int getPlayedGames() {
+        return playedGames;
+    }
+
+    public void setPlayedGames(int playedGames) {
+        this.playedGames = playedGames;
+    }
+
+    public int getWins() {
+        return wins;
+    }
+
+    public void setWins(int wins) {
+        this.wins = wins;
+    }
+
+    public int getLoses() {
+        return loses;
+    }
+
+    public void setLoses(int loses) {
+        this.loses = loses;
+    }
+
     public User() {
     }
 

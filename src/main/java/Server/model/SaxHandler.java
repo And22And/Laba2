@@ -3,11 +3,13 @@ package Server.model;
 /**
  * Created by User on 13.07.2016.
  */
+
 import org.xml.sax.Attributes;
 import org.xml.sax.SAXException;
 import org.xml.sax.helpers.DefaultHandler;
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.Stack;
 
 /**
 
@@ -16,11 +18,11 @@ public class SaxHandler extends DefaultHandler {
 
     private int i = 0;
     private String nameOfClass;
-    private String[] result;
+    private ArrayList<String> result;
 
     private Stack<String> elementStack = new Stack<>();
 
-    public String[] getResult() {
+    public ArrayList getResult() {
         return result;
     }
 
@@ -41,15 +43,15 @@ public class SaxHandler extends DefaultHandler {
         String value = new String(ch, start, length).trim();
         if(value.length() == 0) return; // ignore white space
 
-        if("metaInfo".equals(currentElement()) && ("DoStep".equals(value) || "CheckInitialize".equals(value)) ){
-            result = new String[3];
+        if("metaInfo".equals(currentElement())){
+            result = new ArrayList<>();
             nameOfClass = value;
-            result[0] = value;
+            result.add(0, value);
             i++;
         }
 
-        if(result[0].equals(nameOfClass) && !value.equals(nameOfClass)){
-            result[i] = value;
+        if(result.get(0).equals(nameOfClass) && !value.equals(nameOfClass)){
+            result.add(i, value);
             i++;
         }
 

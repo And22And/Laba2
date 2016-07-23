@@ -3,6 +3,7 @@ package Server.worker;
 import Server.model.Server;
 import Server.model.ServerUser;
 
+import java.util.ArrayList;
 import java.util.Vector;
 
 
@@ -25,8 +26,9 @@ public class Lobby implements Doer{
     }
 
     @Override
-    public void doAction(String[] parameters, ServerUser serverUser){
+    public void doAction(ArrayList parameters, ServerUser serverUser){
         Lobby.LobbyChange("addName", serverUser.getUser().getUserName());
+        Server.getConnectedUsers().add(serverUser);
         String str = "<body>\n" +
                 "<metaInfo>" +"LobbyInitialize"+ "</metaInfo>";
         for(int i = 0; i < Server.getConnectedUsers().size(); i++) {

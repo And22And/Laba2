@@ -12,20 +12,22 @@ import java.util.ArrayList;
 public class CheckInitialize implements Doer {
 
     @Override
-    public void doAction(String[] parameters, ServerUser serverUser) {
+    public void doAction(ArrayList parameters, ServerUser serverUser) {
         ArrayList<User> users = Server.getAllUsers().getUsers();
         boolean isExist = false;
         String result;
         for(int i = 0; i < users.size(); i++) {
-            if(parameters[1].equals(users.get(i).getUserName())) {
-                isExist = true;
+            if (parameters.get(1).equals(users.get(i).getUserName())) {
+                if (parameters.get(2).equals(users.get(i).getPasword())) {
+                    isExist = true;
 
-                result = "<body>\n" +
-                        "    <metaInfo>CheckInitialize</metaInfo>\n" +
-                        "    <isExist>"+ true + "</isExist>\n" +
-                        "    <right>"+ parameters[2].equals(users.get(i).getPasword()) + "</right>\n" +
-                        "</body>";
-                serverUser.send(result);
+                    result = "<body>\n" +
+                            "    <metaInfo>CheckInitialize</metaInfo>\n" +
+                            "    <isExist>" + true + "</isExist>\n" +
+                            "    <right>" + parameters.get(2).equals(users.get(i).getPasword()) + "</right>\n" +
+                            "</body>";
+                    serverUser.send(result);
+                }
             }
         }
         if(!isExist) {

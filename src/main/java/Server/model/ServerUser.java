@@ -17,7 +17,7 @@ import static java.util.Objects.isNull;
  */
 public class ServerUser extends Thread{
     private User user;
-    private User oponent;
+    private ServerUser oponent;
     private boolean isPlaing;
     private Socket socket;
     private BufferedReader in;
@@ -46,11 +46,11 @@ public class ServerUser extends Thread{
         }
     }
 
-    public User getOponent() {
+    public ServerUser getOponent() {
         return oponent;
     }
 
-    public void setOponent(User oponent) {
+    public void setOponent(ServerUser oponent) {
         this.oponent = oponent;
     }
 
