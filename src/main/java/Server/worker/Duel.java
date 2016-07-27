@@ -2,7 +2,6 @@ package Server.worker;
 
 import Server.model.Server;
 import Server.model.ServerUser;
-import Server.model.User;
 
 import java.util.ArrayList;
 
@@ -18,9 +17,11 @@ public class Duel implements Doer {
             if (y.getUser().getUserName().equals(parameters.get(1))) {
                 serverUser.setOponent(y);// переделать так что опонентом был СерверЮзер
                 y.setOponent(serverUser);
+                System.out.println((String) parameters.get(2));
+                serverUser.setColor((String) parameters.get(2));
                 result = "<body>\n" +
                         "    <metaInfo>CheckDuel</metaInfo>\n" +
-                        "    <name>" + y.getUser().getUserName() + "</name>\n" +
+                        "    <name>" + serverUser.getUser().getUserName() + "</name>\n" +
                         "</body>";
                 y.send(result);
             }

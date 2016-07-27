@@ -1,4 +1,19 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <UserList>
-
+    <users>
+        <userId>1</userId>
+        <userName>d</userName>
+        <pasword>d</pasword>
+        <wins>12</wins>
+        <loses>5</loses>
+        <playedGames>17</playedGames>
+    </users>
+    <users>
+        <userId>2</userId>
+        <userName>a</userName>
+        <pasword>a</pasword>
+        <wins>4</wins>
+        <loses>3</loses>
+        <playedGames>7</playedGames>
+    </users>
 </UserList>

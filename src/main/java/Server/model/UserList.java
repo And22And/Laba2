@@ -22,7 +22,8 @@ public class UserList {
         User user = new User();
         user.setUserName(name);
         user.setPasword(password);
-        user.setUserId(getUsers().get(getUsers().size()-1).getUserId() + 1);
+        if(getUsers().size() != 0) user.setUserId(getUsers().get(getUsers().size()-1).getUserId() + 1);
+        else  user.setUserId(1);
         this.users.add(user);
         UserJAXB.marshall(this);
     }

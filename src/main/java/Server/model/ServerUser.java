@@ -22,6 +22,7 @@ public class ServerUser extends Thread{
     private Socket socket;
     private BufferedReader in;
     private PrintWriter out;
+    private String color;
 
     public ServerUser() {
     }
@@ -50,6 +51,14 @@ public class ServerUser extends Thread{
 
     public void setOponent(ServerUser oponent) {
         this.oponent = oponent;
+    }
+
+    public String getColor() {
+        return color;
+    }
+
+    public void setColor(String color) {
+        this.color = color;
     }
 
     public boolean isPlaing() {
@@ -91,7 +100,6 @@ public class ServerUser extends Thread{
 
     @Override
     public void run() {
-        (new Lobby()).doAction(null, this);
         while (!this.socket.isClosed()) {
             String str;
             String result = "";

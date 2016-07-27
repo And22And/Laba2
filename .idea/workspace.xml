@@ -2,12 +2,48 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="6e0c2703-3dd9-4c23-be11-f2e97efaafa2" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/Server/worker/Cancel.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/Server/worker/DoStep.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/Server/worker/SignIn.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/Server/worker/SuccessDuel.java" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/ChatServer/ChatClient.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/ChatServer/ClientInfo.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/ChatServer/ClientListener.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/ChatServer/ClientSender.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/ChatServer/NakovChatServer.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/ChatServer/Sender.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/ChatServer/ServerDispatcher.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/Client/control/Controller.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/Client/control/ControllerEdit.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/Client/control/ControllerLobby.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/Client/control/ControllerLogin.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/Client/model/Box.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/Client/model/ChessLogik.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/Client/model/Distribut.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/Client/model/ExmpleParse/SaxParserExample.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/Client/model/SaxHandler.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/Client/model/Send.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/Client/model/Take.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/Client/view/Main.class" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/Server/model/Parser.class" afterPath="$PROJECT_DIR$/target/classes/Server/model/Parser.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/Server/model/SaxHandler.class" afterPath="$PROJECT_DIR$/target/classes/Server/model/SaxHandler.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/Server/model/Server.class" afterPath="$PROJECT_DIR$/target/classes/Server/model/Server.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/Server/model/ServerUser.class" afterPath="$PROJECT_DIR$/target/classes/Server/model/ServerUser.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/Server/model/User.class" afterPath="$PROJECT_DIR$/target/classes/Server/model/User.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/Server/model/UserList.class" afterPath="$PROJECT_DIR$/target/classes/Server/model/UserList.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/Server/worker/CheckInitialize.class" afterPath="$PROJECT_DIR$/target/classes/Server/worker/CheckInitialize.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/Server/worker/CreateNewUser.class" afterPath="$PROJECT_DIR$/target/classes/Server/worker/CreateNewUser.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/Server/worker/Doer.class" afterPath="$PROJECT_DIR$/target/classes/Server/worker/Doer.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/Server/worker/Lobby.class" afterPath="$PROJECT_DIR$/target/classes/Server/worker/Lobby.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/Server/model/Server.java" afterPath="$PROJECT_DIR$/src/main/java/Server/model/Server.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/Server/model/ServerUser.java" afterPath="$PROJECT_DIR$/src/main/java/Server/model/ServerUser.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/Server/model/UserList.java" afterPath="$PROJECT_DIR$/src/main/java/Server/model/UserList.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/Server/worker/CheckInitialize.java" afterPath="$PROJECT_DIR$/src/main/java/Server/worker/CheckInitialize.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/Server/worker/Duel.java" afterPath="$PROJECT_DIR$/src/main/java/Server/worker/Duel.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/Server/worker/Lobby.java" afterPath="$PROJECT_DIR$/src/main/java/Server/worker/Lobby.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/Server/worker/GoDuel.java" afterPath="$PROJECT_DIR$/src/main/java/Server/worker/Duel.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/UserList.xml" afterPath="$PROJECT_DIR$/src/main/resources/UserList.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/UserList.xml" afterPath="$PROJECT_DIR$/target/classes/UserList.xml" />
     </list>
     <ignored path="Lab2.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -31,28 +67,13 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="ServerUser.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="ServerUser.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/Server/model/ServerUser.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="731">
-              <caret line="66" column="23" selection-start-line="66" selection-start-column="23" selection-end-line="66" selection-end-column="23" />
+            <state relative-caret-position="878">
+              <caret line="93" column="13" selection-start-line="93" selection-start-column="13" selection-end-line="93" selection-end-column="13" />
               <folding>
                 <element signature="method#ServerUser#0;class#ServerUser#0" expanded="false" />
-                <element signature="e#1224#1225#0" expanded="true" />
-                <element signature="e#1262#1263#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="User.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/Server/model/User.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="476">
-              <caret line="39" column="5" selection-start-line="39" selection-start-column="5" selection-end-line="39" selection-end-column="5" />
-              <folding>
-                <element signature="e#810#811#0" expanded="true" />
-                <element signature="e#844#845#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -61,51 +82,8 @@
       <file leaf-file-name="Server.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/Server/model/Server.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="306">
-              <caret line="24" column="33" selection-start-line="24" selection-start-column="33" selection-end-line="24" selection-end-column="33" />
-              <folding>
-                <element signature="e#559#560#0" expanded="true" />
-                <element signature="e#599#600#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="UserList.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/Server/model/UserList.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="323">
-              <caret line="24" column="76" selection-start-line="24" selection-start-column="76" selection-end-line="24" selection-end-column="76" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Lobby.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/Server/worker/Lobby.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="374">
-              <caret line="29" column="73" selection-start-line="29" selection-start-column="73" selection-end-line="29" selection-end-column="73" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Duel.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/Server/worker/Duel.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="340">
-              <caret line="24" column="31" selection-start-line="24" selection-start-column="31" selection-end-line="24" selection-end-column="31" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Doer.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/Server/worker/Doer.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="187">
-              <caret line="11" column="34" selection-start-line="11" selection-start-column="25" selection-end-line="11" selection-end-column="34" />
+            <state relative-caret-position="277">
+              <caret line="47" column="0" selection-start-line="47" selection-start-column="0" selection-end-line="47" selection-end-column="0" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -113,11 +91,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="QueryUser.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/Server/worker/QueryUser.java">
+      <file leaf-file-name="Lobby.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/java/Server/worker/Lobby.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="323">
-              <caret line="23" column="51" selection-start-line="23" selection-start-column="51" selection-end-line="23" selection-end-column="51" />
+            <state relative-caret-position="187">
+              <caret line="18" column="0" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -126,21 +104,19 @@
       <file leaf-file-name="CheckInitialize.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/Server/worker/CheckInitialize.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="68">
-              <caret line="14" column="18" selection-start-line="14" selection-start-column="18" selection-end-line="14" selection-end-column="18" />
+            <state relative-caret-position="255">
+              <caret line="34" column="41" selection-start-line="34" selection-start-column="41" selection-end-line="34" selection-end-column="41" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Parser.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/Server/model/Parser.java">
+      <file leaf-file-name="UserList.xml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/resources/UserList.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="425">
-              <caret line="27" column="49" selection-start-line="27" selection-start-column="49" selection-end-line="27" selection-end-column="49" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
+            <state relative-caret-position="272">
+              <caret line="16" column="36" selection-start-line="16" selection-start-column="36" selection-end-line="16" selection-end-column="36" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -165,10 +141,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/main/java/Server/users.dtd" />
-        <option value="$PROJECT_DIR$/src/main/java/Server/UserList.xml" />
-        <option value="$PROJECT_DIR$/UserList.xml" />
-        <option value="$PROJECT_DIR$/src/main/java/Server/Registration.java" />
         <option value="$PROJECT_DIR$/src/main/java/Client/control/Controller2.java" />
         <option value="$PROJECT_DIR$/src/main/resources/xml/sample2.fxml" />
         <option value="$PROJECT_DIR$/src/main/java/Server/Parser.java" />
@@ -180,10 +152,8 @@
         <option value="$PROJECT_DIR$/src/main/java/Server/User.java" />
         <option value="$PROJECT_DIR$/src/main/java/Server/UserList.java" />
         <option value="$PROJECT_DIR$/src/main/java/Server/Server.java" />
-        <option value="$PROJECT_DIR$/src/main/java/Server/model/UserList.java" />
         <option value="$PROJECT_DIR$/src/main/java/Server/worker/SignIn.java" />
         <option value="$PROJECT_DIR$/src/main/java/Server/worker/Registration.java" />
-        <option value="$PROJECT_DIR$/src/main/java/Server/worker/CreateNewUser.java" />
         <option value="$PROJECT_DIR$/src/main/resources/xml/edit.fxml" />
         <option value="$PROJECT_DIR$/src/main/resources/xml/lobby.fxml" />
         <option value="$PROJECT_DIR$/src/main/resources/xml/sample.fxml" />
@@ -199,7 +169,6 @@
         <option value="$PROJECT_DIR$/src/main/java/Client/control/ControllerLogin.java" />
         <option value="$PROJECT_DIR$/src/main/java/Client/model/ExmpleParse/SaxParserExample.java" />
         <option value="$PROJECT_DIR$/src/main/java/Server/model/UserJAXB.java" />
-        <option value="$PROJECT_DIR$/src/main/resources/UserList.xml" />
         <option value="$PROJECT_DIR$/src/main/java/Client/model/SaxHandler.java" />
         <option value="$PROJECT_DIR$/src/main/java/Client/control/ControllerLobby.java" />
         <option value="$PROJECT_DIR$/src/main/java/Client/LobbyInitialize.java" />
@@ -209,13 +178,20 @@
         <option value="$PROJECT_DIR$/src/main/java/Server/worker/Doer.java" />
         <option value="$PROJECT_DIR$/src/main/java/Server/model/SaxHandler.java" />
         <option value="$PROJECT_DIR$/src/main/java/Server/model/Parser.java" />
-        <option value="$PROJECT_DIR$/src/main/java/Server/worker/Duel.java" />
         <option value="$PROJECT_DIR$/src/main/java/Server/worker/GoDuel.java" />
         <option value="$PROJECT_DIR$/src/main/java/Server/model/User.java" />
+        <option value="$PROJECT_DIR$/src/main/java/Server/model/UserList.java" />
+        <option value="$PROJECT_DIR$/src/main/java/Server/worker/Duel1.java" />
+        <option value="$PROJECT_DIR$/src/main/java/Server/model/ServerUser.java" />
+        <option value="$PROJECT_DIR$/src/main/java/Server/worker/Duel.java" />
+        <option value="$PROJECT_DIR$/src/main/java/Server/model/CreateNewUser.java" />
+        <option value="$PROJECT_DIR$/src/main/java/Server/model/worker/CheckInitialize.java" />
+        <option value="$PROJECT_DIR$/src/main/java/Server/worker/CreateNewUser.java" />
+        <option value="$PROJECT_DIR$/src/main/java/Server/worker/SuccessDuel.java" />
+        <option value="$PROJECT_DIR$/src/main/java/Server/worker/CheckInitialize.java" />
+        <option value="$PROJECT_DIR$/src/main/resources/UserList.xml" />
         <option value="$PROJECT_DIR$/src/main/java/Server/model/Server.java" />
         <option value="$PROJECT_DIR$/src/main/java/Server/worker/Lobby.java" />
-        <option value="$PROJECT_DIR$/src/main/java/Server/worker/CheckInitialize.java" />
-        <option value="$PROJECT_DIR$/src/main/java/Server/model/ServerUser.java" />
       </list>
     </option>
   </component>
@@ -235,7 +211,7 @@
   <component name="ProjectFrameBounds">
     <option name="x" value="-8" />
     <option name="y" value="-8" />
-    <option name="width" value="1382" />
+    <option name="width" value="1378" />
     <option name="height" value="744" />
   </component>
   <component name="ProjectInspectionProfilesVisibleTreeState">
@@ -343,6 +319,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -390,6 +367,10 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="resources" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -455,9 +436,8 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scope" />
-      <pane id="PackagesPane" />
       <pane id="Scratches" />
+      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -468,26 +448,28 @@
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../Laba2-master" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
-      <recent name="Client" />
-      <recent name="ChatServer" />
-    </key>
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="E:\Program\Java\Lab2\src\main\java\Server\worker" />
-    </key>
-    <key name="CopyClassDialog.RECENTS_KEY">
-      <recent name="Server.model" />
-      <recent name="Server.worker" />
-      <recent name="Client.model" />
-    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="E:\Program\Java\Lab2\src\main\resources" />
     </key>
+    <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+      <recent name="Server" />
+      <recent name="Client" />
+      <recent name="ChatServer" />
+    </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="Server.worker" />
+      <recent name="Server.model" />
+      <recent name="Client.model" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="E:\Program\Java\Lab2\src\main\java\Server\worker" />
+      <recent name="E:\Program\Java\Lab2\src\main\java\Server\model" />
+    </key>
   </component>
-  <component name="RunManager" selected="Application.Main">
+  <component name="RunManager" selected="Application.Server (1)">
     <configuration default="false" name="Server" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
       <option name="MAIN_CLASS_NAME" value="Client.Server.model.Server" />
@@ -993,8 +975,8 @@
     </list>
     <recent_temporary>
       <list size="5">
-        <item index="0" class="java.lang.String" itemvalue="Application.Main" />
-        <item index="1" class="java.lang.String" itemvalue="Application.Server (1)" />
+        <item index="0" class="java.lang.String" itemvalue="Application.Server (1)" />
+        <item index="1" class="java.lang.String" itemvalue="Application.Main" />
         <item index="2" class="java.lang.String" itemvalue="Application.Server" />
         <item index="3" class="java.lang.String" itemvalue="Application.UserJAXB" />
         <item index="4" class="java.lang.String" itemvalue="Application.BookMain" />
@@ -1027,41 +1009,45 @@
       <workItem from="1468673238178" duration="6100000" />
       <workItem from="1469016220634" duration="8825000" />
       <workItem from="1469117571776" duration="4549000" />
-      <workItem from="1469294330486" duration="1256000" />
+      <workItem from="1469294330486" duration="1362000" />
+      <workItem from="1469515785819" duration="2998000" />
+      <workItem from="1469542047503" duration="1121000" />
+      <workItem from="1469632048241" duration="1285000" />
+      <workItem from="1469633524757" duration="1336000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="83009000" />
+    <option name="totallyTimeSpent" value="89855000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
-    <editor active="true" />
+    <frame x="-8" y="-8" width="1378" height="744" extended-state="1" />
+    <editor active="false" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3207856" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3289689" sideWeight="0.5030257" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.43698853" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3289689" sideWeight="0.4969743" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24962178" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25417298" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24962178" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Debug" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.39443535" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.39443535" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3207856" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.43698853" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.39934534" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2831424" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
     <layout-to-restore>
@@ -1108,7 +1094,15 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="23" />
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/Server/worker/Lobby.java</url>
+          <line>17</line>
+          <properties />
+          <option name="timeStamp" value="25" />
+        </line-breakpoint>
+      </breakpoints>
+      <option name="time" value="26" />
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -1117,91 +1111,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/main/java/ChatServer/Sender.java" />
-    <entry file="file://$PROJECT_DIR$/src/main/java/ChatServer/ClientSender.java" />
-    <entry file="file://$PROJECT_DIR$/src/main/java/control/ControllerEdit.java" />
-    <entry file="file://$PROJECT_DIR$/src/main/java/control/ControllerLobby.java" />
-    <entry file="file://$PROJECT_DIR$/src/main/java/control/ControllerLogin.java" />
-    <entry file="file://$PROJECT_DIR$/src/main/java/model/SaxHandler.java" />
-    <entry file="file://$PROJECT_DIR$/src/main/java/model/ExmpleParse/SaxParserExample.java" />
-    <entry file="file://$PROJECT_DIR$/src/main/resources/xml/sample2.fxml" />
-    <entry file="file://$PROJECT_DIR$/src/main/resources/xml/edit.fxml">
-      <provider editor-type-id="JavaFX-Scene-Builder">
-        <state />
-      </provider>
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="7" column="210" selection-start-line="7" selection-start-column="203" selection-end-line="7" selection-end-column="210" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/xml/lobby.fxml">
-      <provider editor-type-id="JavaFX-Scene-Builder">
-        <state />
-      </provider>
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="6" column="222" selection-start-line="6" selection-start-column="222" selection-end-line="6" selection-end-column="222" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/xml/sample.fxml">
-      <provider editor-type-id="JavaFX-Scene-Builder">
-        <state />
-      </provider>
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="53">
-          <caret line="11" column="228" selection-start-line="11" selection-start-column="228" selection-end-line="11" selection-end-column="228" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/xml/sampleLogin.fxml">
-      <provider editor-type-id="JavaFX-Scene-Builder">
-        <state />
-      </provider>
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="7" column="222" selection-start-line="7" selection-start-column="222" selection-end-line="7" selection-end-column="222" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/model/Distribut.java" />
-    <entry file="file://$PROJECT_DIR$/src/main/java/view/Main.java" />
-    <entry file="file://$PROJECT_DIR$/src/main/java/model/Take.java" />
-    <entry file="file://$PROJECT_DIR$/src/main/java/model/Send.java" />
-    <entry file="file://$PROJECT_DIR$/src/main/java/control/Controller2.java" />
-    <entry file="file://$PROJECT_DIR$/src/main/java/control/Controller.java" />
-    <entry file="file://$PROJECT_DIR$/src/main/java/model/Box.java" />
-    <entry file="file://$PROJECT_DIR$/src/main/java/model/ChessLogik.java" />
-    <entry file="file://$PROJECT_DIR$/src/main/java/Client/model/Box.java" />
-    <entry file="file://$PROJECT_DIR$/src/main/java/Client/model/ChessLogik.java" />
-    <entry file="file://$PROJECT_DIR$/src/main/java/Client/model/Distribut.java" />
-    <entry file="file://$PROJECT_DIR$/src/main/java/Client/control/Controller.java" />
-    <entry file="file://$PROJECT_DIR$/src/main/java/Client/control/ControllerEdit.java" />
-    <entry file="file://$PROJECT_DIR$/src/main/java/Client/control/ControllerLogin.java" />
-    <entry file="file://$PROJECT_DIR$/src/main/java/Client/model/ExmpleParse/SaxParserExample.java" />
-    <entry file="file://$PROJECT_DIR$/src/main/resources/xml/ForParse2.xml" />
-    <entry file="file://$PROJECT_DIR$/src/main/resources/UserList.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="2" column="0" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/Client/model/Take.java" />
-    <entry file="file://$PROJECT_DIR$/src/main/java/LobbyChange.java" />
-    <entry file="file://$PROJECT_DIR$/src/main/java/Client/view/Main.java" />
-    <entry file="file://$PROJECT_DIR$/src/main/java/Client/model/SaxHandler.java" />
-    <entry file="file://$PROJECT_DIR$/src/main/java/Server/worker/Duel.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="323">
-          <caret line="19" column="32" selection-start-line="19" selection-start-column="32" selection-end-line="19" selection-end-column="32" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/Client/LobbyChange.java" />
     <entry file="file://$PROJECT_DIR$/src/main/java/Client/LobbyInitialize.java" />
     <entry file="file://$PROJECT_DIR$/src/main/java/Client/control/ControllerLobby.java" />
     <entry file="file://$PROJECT_DIR$/src/main/java/Client/model/Send.java" />
@@ -1209,39 +1118,116 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="612">
           <caret line="38" column="0" selection-start-line="38" selection-start-column="0" selection-end-line="38" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/Server/model/worker/Doer.java" />
+    <entry file="file://$PROJECT_DIR$/src/main/java/Server/model/worker/QueryUser.java" />
+    <entry file="file://$PROJECT_DIR$/src/main/java/Server/model/worker/CreateNewUser.java" />
+    <entry file="file://$PROJECT_DIR$/src/main/java/Server/model/worker/Lobby.java" />
+    <entry file="file://$PROJECT_DIR$/src/main/java/Server/model/worker/CheckInitialize.java" />
+    <entry file="file://$PROJECT_DIR$/src/main/java/Server/worker/Duel1.java" />
+    <entry file="file://$PROJECT_DIR$/src/main/java/Server/model/worker/DoStep.java" />
+    <entry file="file://$PROJECT_DIR$/src/main/java/Server/model/worker/Cancel.java" />
+    <entry file="file://$PROJECT_DIR$/src/main/java/Server/model/worker/SuccessDuel.java" />
+    <entry file="file://$PROJECT_DIR$/src/main/java/Server/model/worker/Duel.java" />
+    <entry file="file://$PROJECT_DIR$/src/main/java/Server/model/Lobby.java" />
+    <entry file="file://$PROJECT_DIR$/src/main/java/Server/model/Cancel.java" />
+    <entry file="file://$PROJECT_DIR$/src/main/java/Server/model/SignIn.java" />
+    <entry file="file://$PROJECT_DIR$/src/main/java/Server/model/Doer.java" />
+    <entry file="file://$PROJECT_DIR$/src/main/java/Server/model/Duel.java" />
+    <entry file="file://$PROJECT_DIR$/src/main/java/Server/model/DoStep.java" />
+    <entry file="file://$PROJECT_DIR$/src/main/java/Server/model/QueryUser.java" />
+    <entry file="file://$PROJECT_DIR$/src/main/java/Server/model/SuccessDuel.java" />
+    <entry file="file://$PROJECT_DIR$/src/main/java/Server/model/CheckInitialize.java" />
+    <entry file="file://$PROJECT_DIR$/src/main/java/Server/model/CreateNewUser.java" />
+    <entry file="file://$PROJECT_DIR$/src/main/java/Server/model/worker/Cancel.java" />
+    <entry file="file://$PROJECT_DIR$/src/main/java/Server/model/worker/SignIn.java" />
+    <entry file="file://$PROJECT_DIR$/src/main/java/Server/model/worker/Doer.java" />
+    <entry file="file://$PROJECT_DIR$/src/main/java/Server/model/worker/Duel.java" />
+    <entry file="file://$PROJECT_DIR$/src/main/java/Server/model/worker/DoStep.java" />
+    <entry file="file://$PROJECT_DIR$/src/main/java/Server/model/worker/QueryUser.java" />
+    <entry file="file://$PROJECT_DIR$/src/main/java/Server/model/worker/SuccessDuel.java" />
+    <entry file="file://$PROJECT_DIR$/src/main/java/Server/model/worker/CreateNewUser.java" />
+    <entry file="file://$PROJECT_DIR$/src/main/java/Server/model/worker/CheckInitialize.java" />
+    <entry file="file://$PROJECT_DIR$/src/main/java/Server/model/worker/Lobby.java" />
+    <entry file="file://$PROJECT_DIR$/src/main/java/Server/worker/Cancel.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/Server/worker/SignIn.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/Server/worker/Doer.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/Server/worker/Duel.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/Server/worker/DoStep.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/Server/worker/QueryUser.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/Server/worker/SuccessDuel.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/Server/model/SaxHandler.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="595">
+        <state relative-caret-position="533">
           <caret line="42" column="0" selection-start-line="42" selection-start-column="0" selection-end-line="42" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/Server/worker/CreateNewUser.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/Server/model/UserList.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="215">
-          <caret line="22" column="37" selection-start-line="22" selection-start-column="37" selection-end-line="22" selection-end-column="37" />
+        <state relative-caret-position="340">
+          <caret line="25" column="32" selection-start-line="25" selection-start-column="32" selection-end-line="25" selection-end-column="32" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/Server/model/Parser.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="425">
-          <caret line="27" column="49" selection-start-line="27" selection-start-column="49" selection-end-line="27" selection-end-column="49" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/Server/model/User.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="476">
+        <state relative-caret-position="442">
           <caret line="39" column="5" selection-start-line="39" selection-start-column="5" selection-end-line="39" selection-end-column="5" />
           <folding>
             <element signature="e#810#811#0" expanded="true" />
@@ -1250,76 +1236,63 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/Server/model/Server.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/Server/model/Parser.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="306">
-          <caret line="24" column="33" selection-start-line="24" selection-start-column="33" selection-end-line="24" selection-end-column="33" />
-          <folding>
-            <element signature="e#559#560#0" expanded="true" />
-            <element signature="e#599#600#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/Server/model/UserList.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="323">
-          <caret line="24" column="76" selection-start-line="24" selection-start-column="76" selection-end-line="24" selection-end-column="76" />
+        <state relative-caret-position="425">
+          <caret line="27" column="49" selection-start-line="27" selection-start-column="49" selection-end-line="27" selection-end-column="49" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/Server/worker/Lobby.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/Server/worker/CreateNewUser.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="374">
-          <caret line="29" column="73" selection-start-line="29" selection-start-column="73" selection-end-line="29" selection-end-column="73" />
+        <state relative-caret-position="105">
+          <caret line="11" column="13" selection-start-line="11" selection-start-column="13" selection-end-line="11" selection-end-column="13" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/Server/worker/CheckInitialize.java">
+    <entry file="file://$PROJECT_DIR$/src/main/resources/UserList.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="14" column="18" selection-start-line="14" selection-start-column="18" selection-end-line="14" selection-end-column="18" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/Server/worker/Duel.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="340">
-          <caret line="24" column="31" selection-start-line="24" selection-start-column="31" selection-end-line="24" selection-end-column="31" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/Server/worker/Doer.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="11" column="34" selection-start-line="11" selection-start-column="25" selection-end-line="11" selection-end-column="34" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/Server/worker/QueryUser.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="323">
-          <caret line="23" column="51" selection-start-line="23" selection-start-column="51" selection-end-line="23" selection-end-column="51" />
+        <state relative-caret-position="272">
+          <caret line="16" column="36" selection-start-line="16" selection-start-column="36" selection-end-line="16" selection-end-column="36" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/Server/model/ServerUser.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="731">
-          <caret line="66" column="23" selection-start-line="66" selection-start-column="23" selection-end-line="66" selection-end-column="23" />
+        <state relative-caret-position="878">
+          <caret line="93" column="13" selection-start-line="93" selection-start-column="13" selection-end-line="93" selection-end-column="13" />
           <folding>
             <element signature="method#ServerUser#0;class#ServerUser#0" expanded="false" />
-            <element signature="e#1224#1225#0" expanded="true" />
-            <element signature="e#1262#1263#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/Server/worker/CheckInitialize.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="34" column="41" selection-start-line="34" selection-start-column="41" selection-end-line="34" selection-end-column="41" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/Server/model/Server.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="277">
+          <caret line="47" column="0" selection-start-line="47" selection-start-column="0" selection-end-line="47" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/Server/worker/Lobby.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="187">
+          <caret line="18" column="0" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>

@@ -17,7 +17,7 @@ public class Server{
     private static UserList allUsers;
 
     public static void removeUser(ServerUser user) {
-        Lobby.LobbyChange("removeName", user.getUser().getUserName());
+        Lobby.LobbyChange(" LobbyRemoveName", user.getUser().getUserName());
         connectedUsers.remove(user);
     }
 

@@ -24,11 +24,15 @@ public class CheckInitialize implements Doer {
                             "    <metaInfo>CheckInitialize</metaInfo>\n" +
                             "    <isExist>" + true + "</isExist>\n" +
                             "    <right>" + parameters.get(2).equals(users.get(i).getPasword()) + "</right>\n" +
+                            "    <name>" + users.get(i).getUserName()+ "</name>\n" +
+                            "    <game>" + users.get(i).getPlayedGames()+ "</game>\n" +
+                            "    <wins>" + users.get(i).getWins()+ "</wins>\n" +
                             "</body>";
                     serverUser.send(result);
                     if(parameters.get(2).equals(users.get(i).getPasword())) {
-                        Server.addUser(serverUser);
                         serverUser.setUser(users.get(i));
+                        Lobby.doAction(serverUser);
+                        Server.addUser(serverUser);
                     }
                 }
             }
