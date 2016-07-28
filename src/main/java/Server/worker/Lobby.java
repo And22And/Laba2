@@ -26,7 +26,7 @@ public class Lobby{
     public static void doAction(ServerUser serverUser){
         Lobby.LobbyChange("LobbyAddName", serverUser.getUser().getUserName());
         String str = "<body>\n" +
-                "<metaInfo>" +"LobbyInitialize"+ "</metaInfo>";
+                "<metaInfo>" +"LobbyInitialize"+ "</metaInfo>\n";
         for(int i = 0; i < Server.getConnectedUsers().size(); i++) {
             str += "<name>" + Server.getConnectedUsers().get(i).getUser().getUserName() + "</name>\n";
         }

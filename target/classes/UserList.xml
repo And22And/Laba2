@@ -16,4 +16,20 @@
         <loses>3</loses>
         <playedGames>7</playedGames>
     </users>
+    <users>
+        <userId>3</userId>
+        <userName>s</userName>
+        <pasword>s</pasword>
+        <wins>0</wins>
+        <loses>0</loses>
+        <playedGames>0</playedGames>
+    </users>
+    <users>
+        <userId>4</userId>
+        <userName>q</userName>
+        <pasword>q</pasword>
+        <wins>0</wins>
+        <loses>0</loses>
+        <playedGames>0</playedGames>
+    </users>
 </UserList>
