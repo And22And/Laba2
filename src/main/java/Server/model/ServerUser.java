@@ -1,6 +1,7 @@
 package Server.model;
 
 import Server.worker.Lobby;
+import org.xml.sax.InputSource;
 import org.xml.sax.SAXException;
 
 import javax.xml.parsers.ParserConfigurationException;
@@ -113,16 +114,12 @@ public class ServerUser extends Thread{
                 SAXParserFactory factory = SAXParserFactory.newInstance();
                 SAXParser saxParser = null;
                 try {
-                    FileWriter writer = new FileWriter("src//main//resources//xml//ForParse2.xml", false);
-                    writer.write(result);
-                    writer.flush();
-                    InputStream xmlInput = new FileInputStream( "src//main//resources//xml//ForParse2.xml" );
+                    System.out.println(result);
                     saxParser = factory.newSAXParser();
                     SaxHandler handler = new SaxHandler();
-                    saxParser.parse(xmlInput, handler);
-                    writer.close();
-                    System.out.println(handler.getResult().toString()); //////////////
-                    new File("src//main//resources//xml//ForParse2.xml" ).delete();
+                    InputSource is = new InputSource(new StringReader(result));
+                    saxParser.parse(is, handler);
+                    System.out.println(handler.getResult());
                     Parser.callDoer(handler.getResult(), this);
                 } catch (IOException e) {
                     e.printStackTrace();

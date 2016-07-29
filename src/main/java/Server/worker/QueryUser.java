@@ -21,6 +21,7 @@ public class QueryUser implements Doer {
                         "    <name>"+ i.getUserName() + "</name>\n" +
                         "    <game>"+ i.getPlayedGames() + "</game>\n" +
                         "    <wins>"+ i.getWins() + "</wins>\n" +
+                        "    <loses>"+ i.getLoses() + "</loses>\n" +
                         "    <status>"+ serverUser.isPlaing() + "</status>\n" +
                         "</body>";
                 serverUser.send(result);
