@@ -15,15 +15,25 @@ public class Duel implements Doer {
         String result;
         for (ServerUser y : arrayUsers) {
             if (y.getUser().getUserName().equals(parameters.get(1))) {
-                serverUser.setOponent(y);// переделать так что опонентом был СерверЮзер
-                y.setOponent(serverUser);
-                System.out.println((String) parameters.get(2));
-                serverUser.setColor((String) parameters.get(2));
-                result = "<body>\n" +
-                        "    <metaInfo>CheckDuel</metaInfo>\n" +
-                        "    <name>" + serverUser.getUser().getUserName() + "</name>\n" +
-                        "</body>";
-                y.send(result);
+                if(y.isPlaing()) {
+                    result = "<body>\n" +
+                            " <metaInfo>Cancel</metaInfo>\n" +
+                            "</body>";
+                    serverUser.send(result);
+                }
+                else {
+                    serverUser.setOponent(y);
+                    y.setOponent(serverUser);
+                    serverUser.setPlaing(true);
+                    y.setPlaing(true);
+                    System.out.println((String) parameters.get(2));
+                    serverUser.setColor((String) parameters.get(2));
+                    result = "<body>\n" +
+                            "    <metaInfo>CheckDuel</metaInfo>\n" +
+                            "    <name>" + serverUser.getUser().getUserName() + "</name>\n" +
+                            "</body>";
+                    y.send(result);
+                }
             }
         }
     }

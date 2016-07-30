@@ -14,6 +14,12 @@ public class SuccessDraw implements Doer {
         result = "<body>\n" +
                 "    <metaInfo>SuccessDraw</metaInfo>\n" +
                 "</body>";
+        ServerUser tmp = serverUser.getOponent();
+        serverUser.setOponent(null);
+        tmp.setOponent(null);
+        serverUser.setPlaing(false);
+        tmp.setPlaing(false);
+
         serverUser.getOponent().send(result);
     }
 }

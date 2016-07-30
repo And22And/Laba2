@@ -25,6 +25,7 @@ public class CreateNewUser implements Doer {
                         "    <isCreated>"+ true + "</isCreated>\n" +
                         "</body>";
                 serverUser.send(result);
+                break;
             }
         }
         if(!isExist) {
