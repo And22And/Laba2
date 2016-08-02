@@ -17,7 +17,7 @@ public class Server{
     private static UserList allUsers;
 
     public static void removeUser(ServerUser user) {
-        Lobby.LobbyChange(" LobbyRemoveName", user.getUser().getUserName());
+        Lobby.LobbyChange("LobbyRemoveName", user.getUser().getUserName());
         connectedUsers.remove(user);
     }
 
@@ -36,6 +36,8 @@ public class Server{
     public static void main(String[] args) {
         connectedUsers = new ArrayList<>();
         allUsers = UserJAXB.unmarshall();
+        //ClientConnectionCheker cheker = new ClientConnectionCheker();
+        //cheker.start();
         ServerSocket ss = null;
         try {
             ss = new ServerSocket(4444);

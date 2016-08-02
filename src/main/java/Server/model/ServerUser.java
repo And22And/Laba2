@@ -10,6 +10,7 @@ import javax.xml.parsers.SAXParserFactory;
 import java.io.*;
 import java.net.Socket;
 import java.net.SocketException;
+import java.sql.Time;
 
 import static java.util.Objects.isNull;
 
@@ -83,13 +84,21 @@ public class ServerUser extends Thread{
         out.flush();
     }
 
+    public void closeConection() {
+        try {
+            this.socket.close();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
     public String give() {
         String str = "";
         try {
-            str = in.readLine();
+            str = this.in.readLine();
         } catch (SocketException e) {
             try {
-                socket.close();
+                this.socket.close();
             } catch (IOException e1) {
                 e1.printStackTrace();
             }

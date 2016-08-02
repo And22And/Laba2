@@ -1,5 +1,6 @@
-package Server.model;
+package Server.others;
 
+import Server.model.Server;
 import com.sun.org.apache.bcel.internal.classfile.*;
 import com.sun.org.apache.xerces.internal.xni.parser.XMLInputSource;
 import org.w3c.dom.*;
