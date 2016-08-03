@@ -14,6 +14,13 @@ public class Pad implements Doer {
         result = "<body>\n" +
                 "    <metaInfo>Pad</metaInfo>\n" +
                 "</body>";
+        ServerUser tmp = serverUser.getOponent();
+        serverUser.setOponent(null);
+        tmp.setOponent(null);
+        serverUser.setPlaing(false);
+        tmp.setPlaing(false);
+        serverUser.getUser().draw();
+        tmp.getUser().draw();
         serverUser.getOponent().send(result);
     }
 }

@@ -1,6 +1,10 @@
 package Server.model;
 
-import Server.worker.Lobby;
+import Server.model.Parser;
+import Server.model.SaxHandler;
+import Server.model.Server;
+import Server.model.User;
+import Server.worker.Pass;
 import org.xml.sax.InputSource;
 import org.xml.sax.SAXException;
 
@@ -10,7 +14,7 @@ import javax.xml.parsers.SAXParserFactory;
 import java.io.*;
 import java.net.Socket;
 import java.net.SocketException;
-import java.sql.Time;
+import java.util.Scanner;
 
 import static java.util.Objects.isNull;
 
@@ -22,7 +26,7 @@ public class ServerUser extends Thread{
     private ServerUser oponent;
     private boolean isPlaing;
     private Socket socket;
-    private BufferedReader in;
+    private Scanner in;
     private PrintWriter out;
     private String color;
 
@@ -40,7 +44,7 @@ public class ServerUser extends Thread{
     public ServerUser(Socket socket) {
         this.socket = socket;
         try {
-            this.in = new BufferedReader(new InputStreamReader(this.socket.getInputStream()));
+            this.in = new Scanner(new InputStreamReader(this.socket.getInputStream()));
             this.out = new PrintWriter(new OutputStreamWriter(this.socket.getOutputStream()));
         } catch (IOException e) {
             e.printStackTrace();
@@ -84,7 +88,7 @@ public class ServerUser extends Thread{
         out.flush();
     }
 
-    public void closeConection() {
+    public void closeConnection() {
         try {
             this.socket.close();
         } catch (IOException e) {
@@ -94,23 +98,13 @@ public class ServerUser extends Thread{
 
     public String give() {
         String str = "";
-        try {
-            str = this.in.readLine();
-        } catch (SocketException e) {
-            try {
-                this.socket.close();
-            } catch (IOException e1) {
-                e1.printStackTrace();
-            }
-        } catch (IOException  e) {
-            e.printStackTrace();
-        }
+        str = this.in.nextLine();
         return str;
     }
 
     @Override
     public void run() {
-        while (!this.socket.isClosed()) {
+        while (!this.socket.isClosed() && this.in.hasNextLine()) {
             String str;
             String result = "";
             do {
@@ -139,12 +133,19 @@ public class ServerUser extends Thread{
                 }
             }
         }
-        try {
-            this.in.close();
-            this.out.close();
-        } catch (IOException e) {
-            e.printStackTrace();
+        if(!this.socket.isClosed()){
+            try {
+                this.socket.close();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
         }
+        this.in.close();
+        this.out.close();
         Server.removeUser(this);
+        if(!isNull(this.getOponent())) {
+            (new Pass()).doAction(null, this);
+        }
+        Thread.currentThread().interrupt();
     }
 }

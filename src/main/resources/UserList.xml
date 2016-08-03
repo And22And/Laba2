@@ -32,4 +32,12 @@
         <loses>0</loses>
         <playedGames>0</playedGames>
     </users>
+    <users>
+        <userId>5</userId>
+        <userName>w</userName>
+        <pasword>w</pasword>
+        <wins>0</wins>
+        <loses>0</loses>
+        <playedGames>0</playedGames>
+    </users>
 </UserList>

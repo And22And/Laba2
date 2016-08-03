@@ -23,7 +23,7 @@ public class CheckInitialize implements Doer {
             }
         }
         String result;
-        for(int i = 0; i < users.size(); i++) {
+        for(int i = 0; i < users.size() && !isConected; i++) {
             if (parameters.get(1).equals(users.get(i).getUserName())) {
                 if (parameters.get(2).equals(users.get(i).getPasword())) {
                     isExist = true;

@@ -14,6 +14,11 @@ public class Mate implements Doer {
         result = "<body>\n" +
                 "    <metaInfo>Mate</metaInfo>\n" +
                 "</body>";
+
+        serverUser.getUser().winer();
+        serverUser.getOponent().getUser().loser();
+        serverUser.setPlaing(false);
+        serverUser.getOponent().setPlaing(false);
         serverUser.getOponent().send(result);
     }
 }

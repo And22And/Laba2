@@ -25,7 +25,7 @@ public class ClientConnectionCheker extends Thread {
                     timeEnd = System.currentTimeMillis();
                 }
                 if (Math.abs(timeStart - timeEnd) > 999) {
-                    arr.get(i).closeConection();
+                    arr.get(i).closeConnection();
                 }
             }
         }

@@ -14,6 +14,10 @@ public class Pass implements Doer {
         result = "<body>\n" +
                 " <metaInfo>Pass</metaInfo>\n" +
                 "</body>";
+        serverUser.getUser().loser();
+        serverUser.getOponent().getUser().winer();
+        serverUser.setPlaing(false);
+        serverUser.getOponent().setPlaing(false);
         serverUser.getOponent().send(result);
     }
 }
