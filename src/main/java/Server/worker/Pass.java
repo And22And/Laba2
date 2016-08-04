@@ -1,6 +1,8 @@
 package Server.worker;
 
+import Server.model.Server;
 import Server.model.ServerUser;
+import Server.model.UserJAXB;
 
 import java.util.ArrayList;
 
@@ -18,6 +20,12 @@ public class Pass implements Doer {
         serverUser.getOponent().getUser().winer();
         serverUser.setPlaing(false);
         serverUser.getOponent().setPlaing(false);
-        serverUser.getOponent().send(result);
+        ServerUser tmp = serverUser.getOponent();
+        serverUser.setOponent(null);
+        tmp.setOponent(null);
+        UserJAXB.marshall(Server.getAllUsers());
+        (new UserInfo()).sendInfo(serverUser);
+        (new UserInfo()).sendInfo(tmp);
+        tmp.send(result);
     }
 }

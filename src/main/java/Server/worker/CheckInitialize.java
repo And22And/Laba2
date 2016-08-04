@@ -31,7 +31,6 @@ public class CheckInitialize implements Doer {
                             "    <metaInfo>CheckInitialize</metaInfo>\n" +
                             "    <isExist>" + true + "</isExist>\n" +
                             "    <right>" + parameters.get(2).equals(users.get(i).getPasword()) + "</right>\n" +
-//                            "    <conected>" + isConected + "</conected>\n" +
                             "    <name>" + users.get(i).getUserName()+ "</name>\n" +
                             "    <game>" + users.get(i).getPlayedGames()+ "</game>\n" +
                             "    <wins>" + users.get(i).getWins()+ "</wins>\n" +

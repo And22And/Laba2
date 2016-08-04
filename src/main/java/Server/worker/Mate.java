@@ -1,6 +1,8 @@
 package Server.worker;
 
+import Server.model.Server;
 import Server.model.ServerUser;
+import Server.model.UserJAXB;
 
 import java.util.ArrayList;
 
@@ -19,6 +21,12 @@ public class Mate implements Doer {
         serverUser.getOponent().getUser().loser();
         serverUser.setPlaing(false);
         serverUser.getOponent().setPlaing(false);
+        ServerUser tmp = serverUser.getOponent();
+        serverUser.setOponent(null);
+        tmp.setOponent(null);
+        UserJAXB.marshall(Server.getAllUsers());
+        (new UserInfo()).sendInfo(serverUser);
+        (new UserInfo()).sendInfo(tmp);
         serverUser.getOponent().send(result);
     }
 }

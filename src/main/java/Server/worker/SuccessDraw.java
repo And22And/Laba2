@@ -1,6 +1,8 @@
 package Server.worker;
 
+import Server.model.Server;
 import Server.model.ServerUser;
+import Server.model.UserJAXB;
 
 import java.util.ArrayList;
 
@@ -21,6 +23,9 @@ public class SuccessDraw implements Doer {
         tmp.setPlaing(false);
         serverUser.getUser().draw();
         tmp.getUser().draw();
+        UserJAXB.marshall(Server.getAllUsers());
+        (new UserInfo()).sendInfo(serverUser);
+        (new UserInfo()).sendInfo(tmp);
         serverUser.getOponent().send(result);
     }
 }
