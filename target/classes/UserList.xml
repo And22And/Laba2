@@ -40,4 +40,12 @@
         <loses>0</loses>
         <playedGames>0</playedGames>
     </users>
+    <users>
+        <userId>6</userId>
+        <userName>cab</userName>
+        <pasword>cab</pasword>
+        <wins>0</wins>
+        <loses>0</loses>
+        <playedGames>0</playedGames>
+    </users>
 </UserList>

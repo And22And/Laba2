@@ -29,15 +29,23 @@
         <userName>q</userName>
         <pasword>q</pasword>
         <wins>0</wins>
-        <loses>1</loses>
-        <playedGames>1</playedGames>
+        <loses>0</loses>
+        <playedGames>0</playedGames>
     </users>
     <users>
         <userId>5</userId>
         <userName>w</userName>
         <pasword>w</pasword>
-        <wins>1</wins>
+        <wins>0</wins>
         <loses>0</loses>
-        <playedGames>1</playedGames>
+        <playedGames>0</playedGames>
+    </users>
+    <users>
+        <userId>6</userId>
+        <userName>cab</userName>
+        <pasword>cab</pasword>
+        <wins>0</wins>
+        <loses>0</loses>
+        <playedGames>0</playedGames>
     </users>
 </UserList>

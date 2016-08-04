@@ -36,8 +36,6 @@ public class Server{
     public static void main(String[] args) {
         connectedUsers = new ArrayList<>();
         allUsers = UserJAXB.unmarshall();
-        //ClientConnectionCheker cheker = new ClientConnectionCheker();
-        //cheker.start();
         ServerSocket ss = null;
         try {
             ss = new ServerSocket(4444);
@@ -50,6 +48,7 @@ public class Server{
                 Socket client = ss.accept();
                 System.out.println("Connected " + client.toString());
                 ServerUser user = new ServerUser(client);
+                user.setPlaing(true);
                 user.start();
             } catch (IOException e) {
                 e.printStackTrace();

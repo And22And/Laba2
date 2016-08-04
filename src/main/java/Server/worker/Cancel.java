@@ -20,7 +20,5 @@ public class Cancel implements Doer{
         tmp.setOponent(null);
         serverUser.setPlaing(false);
         tmp.setPlaing(false);
-        serverUser.getUser().draw();
-        tmp.getUser().draw();
     }
 }

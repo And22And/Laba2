@@ -84,6 +84,7 @@ public class ServerUser extends Thread{
     }
 
     public void send(String str) {
+        System.out.println(str);
         out.println(str);
         out.flush();
     }

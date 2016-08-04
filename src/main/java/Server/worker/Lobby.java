@@ -15,7 +15,6 @@ public class Lobby{
                 "    <metaInfo>" + change +  "</metaInfo>\n" +
                 "    <name>"+ name + "</name>\n" +
                 "</body>";
-        System.out.println("LobbyChange: " + result);
         for (int i = 0; i < Server.getConnectedUsers().size(); i++) {
             if(!Server.getConnectedUsers().get(i).getUser().getUserName().equals(name))
                 Server.getConnectedUsers().get(i).send(result);
@@ -31,7 +30,6 @@ public class Lobby{
             str += "<name>" + Server.getConnectedUsers().get(i).getUser().getUserName() + "</name>\n";
         }
         str += "</body>";
-        System.out.println(str);
         serverUser.send(str);
     }
 
