@@ -43,6 +43,7 @@ public class ServerUser extends Thread{
 
     public ServerUser(Socket socket) {
         this.socket = socket;
+        this.setPlaing(false);
         try {
             this.in = new Scanner(new InputStreamReader(this.socket.getInputStream()));
             this.out = new PrintWriter(new OutputStreamWriter(this.socket.getOutputStream()));

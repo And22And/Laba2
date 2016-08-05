@@ -48,7 +48,6 @@ public class Server{
                 Socket client = ss.accept();
                 System.out.println("Connected " + client.toString());
                 ServerUser user = new ServerUser(client);
-                user.setPlaing(true);
                 user.start();
             } catch (IOException e) {
                 e.printStackTrace();

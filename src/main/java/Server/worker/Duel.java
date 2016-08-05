@@ -26,7 +26,6 @@ public class Duel implements Doer {
                     y.setOponent(serverUser);
                     serverUser.setPlaing(true);
                     y.setPlaing(true);
-                    System.out.println((String) parameters.get(2));
                     serverUser.setColor((String) parameters.get(2));
                     result = "<body>\n" +
                             "    <metaInfo>CheckDuel</metaInfo>\n" +
