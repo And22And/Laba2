@@ -12,17 +12,17 @@ import java.util.ArrayList;
 public class QueryUser implements Doer {
     @Override
     public void doAction(ArrayList parameters, ServerUser serverUser) {
-        ArrayList<User> users = Server.getAllUsers().getUsers();
+        ArrayList<ServerUser> users = Server.getConnectedUsers();
         String result;
-        for(User i : users ){
-            if(i.getUserName().equals(parameters.get(1))){
+        for(ServerUser i : users ){
+            if(i.getUser().getUserName().equals(parameters.get(1))){
                 result = "<body>\n" +
                         "    <metaInfo>QueryUser</metaInfo>\n" +
-                        "    <name>"+ i.getUserName() + "</name>\n" +
-                        "    <game>"+ i.getPlayedGames() + "</game>\n" +
-                        "    <wins>"+ i.getWins() + "</wins>\n" +
-                        "    <loses>"+ i.getLoses() + "</loses>\n" +
-                        "    <status>"+ serverUser.isPlaing() + "</status>\n" +
+                        "    <name>"+ i.getUser().getUserName() + "</name>\n" +
+                        "    <game>"+ i.getUser().getPlayedGames() + "</game>\n" +
+                        "    <wins>"+ i.getUser().getWins() + "</wins>\n" +
+                        "    <loses>"+ i.getUser().getLoses() + "</loses>\n" +
+                        "    <status>"+ i.isPlaing() + "</status>\n" +
                         "</body>";
                 serverUser.send(result);
             }

@@ -30,11 +30,6 @@ public class CheckInitialize implements Doer {
                     result = "<body>\n" +
                             "    <metaInfo>CheckInitialize</metaInfo>\n" +
                             "    <isExist>" + true + "</isExist>\n" +
-                            "    <right>" + parameters.get(2).equals(users.get(i).getPasword()) + "</right>\n" +
-                            "    <name>" + users.get(i).getUserName()+ "</name>\n" +
-                            "    <game>" + users.get(i).getPlayedGames()+ "</game>\n" +
-                            "    <wins>" + users.get(i).getWins()+ "</wins>\n" +
-                            "    <loses>" + users.get(i).getLoses()+ "</loses>\n" +
                             "</body>";
                     serverUser.send(result);
                     if(parameters.get(2).equals(users.get(i).getPasword())) {
@@ -50,7 +45,6 @@ public class CheckInitialize implements Doer {
             result = "<body>\n" +
                     "    <metaInfo>CheckInitialize</metaInfo>\n" +
                     "    <isExist>"+ false + "</isExist>\n" +
-                    "    <right>"+ false + "</right>\n" +   // ?
                     "</body>";
             serverUser.send(result);
         }
