@@ -9,25 +9,25 @@ import Server.model.ServerUser;
  */
 public class Lobby{
 
-    public static synchronized void LobbyChange(String change, String name) {
+    public static synchronized void LobbyChange(String change, String name, ServerUser serverUser) {
         String result;
         result = "<body>\n" +
                 "    <metaInfo>" + change +  "</metaInfo>\n" +
                 "    <name>"+ name + "</name>\n" +
                 "</body>";
-        for (int i = 0; i < Server.getConnectedUsers().size(); i++) {
-            if(!Server.getConnectedUsers().get(i).getUser().getUserName().equals(name))
-                Server.getConnectedUsers().get(i).send(result);
+        for (int i = 0; i < serverUser.getServer().getConnectedUsers().size(); i++) {
+            if(!serverUser.getServer().getConnectedUsers().get(i).getUser().getUserName().equals(name))
+                serverUser.getServer().getConnectedUsers().get(i).send(result);
         }
     }
 
 
     public static void doAction(ServerUser serverUser){
-        Lobby.LobbyChange("LobbyAddName", serverUser.getUser().getUserName());
+        Lobby.LobbyChange("LobbyAddName", serverUser.getUser().getUserName(), serverUser);
         String str = "<body>\n" +
                 "<metaInfo>" +"LobbyInitialize"+ "</metaInfo>\n";
-        for(int i = 0; i < Server.getConnectedUsers().size(); i++) {
-            str += "<name>" + Server.getConnectedUsers().get(i).getUser().getUserName() + "</name>\n";
+        for(int i = 0; i < serverUser.getServer().getConnectedUsers().size(); i++) {
+            str += "<name>" + serverUser.getServer().getConnectedUsers().get(i).getUser().getUserName() + "</name>\n";
         }
         str += "</body>";
         serverUser.send(str);

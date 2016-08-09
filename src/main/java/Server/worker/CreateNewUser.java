@@ -14,7 +14,7 @@ public class CreateNewUser implements Doer {
 
     @Override
     public void doAction(ArrayList parameters, ServerUser serverUser) {
-        ArrayList<User> users = Server.getAllUsers().getUsers();
+        ArrayList<User> users = serverUser.getServer().getAllUsers().getUsers();
         boolean isExist = false;
         String result;
         for(int i = 0; i < users.size(); i++) {
@@ -29,7 +29,7 @@ public class CreateNewUser implements Doer {
             }
         }
         if(!isExist) {
-            Server.getAllUsers().add((String) parameters.get(1), (String) parameters.get(2));
+            serverUser.getServer().getAllUsers().add((String) parameters.get(1), (String) parameters.get(2));
             result = "<body>\n" +
                     "    <metaInfo>CreateNewUser</metaInfo>\n" +
                     "    <isCreated>"+ false + "</isCreated>\n" +

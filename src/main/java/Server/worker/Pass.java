@@ -23,7 +23,7 @@ public class Pass implements Doer {
         ServerUser tmp = serverUser.getOponent();
         serverUser.setOponent(null);
         tmp.setOponent(null);
-        UserJAXB.marshall(Server.getAllUsers());
+        UserJAXB.marshall(serverUser.getServer().getAllUsers());
         (new UserInfo()).sendInfo(serverUser);
         (new UserInfo()).sendInfo(tmp);
         tmp.send(result);

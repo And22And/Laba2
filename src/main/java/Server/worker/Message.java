@@ -22,11 +22,11 @@ public class Message implements Doer {
         if(!isNull(serverUser.getOponent())) {
             serverUser.getOponent().send(result);
         } else {
-            for (int i = 0; i < Server.getConnectedUsers().size(); i++) {
-                if(!Server.getConnectedUsers().get(i).getUser().getUserName()
+            for (int i = 0; i < serverUser.getServer().getConnectedUsers().size(); i++) {
+                if(!serverUser.getServer().getConnectedUsers().get(i).getUser().getUserName()
                         .equals(serverUser.getUser().getUserName()) &&
-                        !Server.getConnectedUsers().get(i).isPlaing())
-                    Server.getConnectedUsers().get(i).send(result);
+                        !serverUser.getServer().getConnectedUsers().get(i).isPlaing())
+                    serverUser.getServer().getConnectedUsers().get(i).send(result);
             }
         }
     }

@@ -24,7 +24,7 @@ public class Mate implements Doer {
         ServerUser tmp = serverUser.getOponent();
         serverUser.setOponent(null);
         tmp.setOponent(null);
-        UserJAXB.marshall(Server.getAllUsers());
+        UserJAXB.marshall(serverUser.getServer().getAllUsers());
         (new UserInfo()).sendInfo(serverUser);
         (new UserInfo()).sendInfo(tmp);
         serverUser.getOponent().send(result);

@@ -13,11 +13,11 @@ public class CheckInitialize implements Doer {
 
     @Override
     public void doAction(ArrayList parameters, ServerUser serverUser) {
-        ArrayList<User> users = Server.getAllUsers().getUsers();
+        ArrayList<User> users = serverUser.getServer().getAllUsers().getUsers();
         boolean isExist = false;
         boolean isConected = false;
-        for(int i = 0; i < Server.getConnectedUsers().size(); i++) {
-            if (Server.getConnectedUsers().get(i).getUser().getUserName().equals(parameters.get(1))) {
+        for(int i = 0; i < serverUser.getServer().getConnectedUsers().size(); i++) {
+            if (serverUser.getServer().getConnectedUsers().get(i).getUser().getUserName().equals(parameters.get(1))) {
                 isConected = true;
                 break;
             }
@@ -35,7 +35,7 @@ public class CheckInitialize implements Doer {
                     if(parameters.get(2).equals(users.get(i).getPasword())) {
                         serverUser.setUser(users.get(i));
                         Lobby.doAction(serverUser);
-                        Server.addUser(serverUser);
+                        serverUser.getServer().addUser(serverUser);
                     }
                     break;
                 }

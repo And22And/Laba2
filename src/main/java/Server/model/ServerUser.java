@@ -29,8 +29,26 @@ public class ServerUser extends Thread{
     private Scanner in;
     private PrintWriter out;
     private String color;
+    private Server server;
 
     public ServerUser() {
+    }
+
+
+    public ServerUser(Socket socket, Server server) {
+        this.socket = socket;
+        this.server = server;
+        this.setPlaing(false);
+        try {
+            this.in = new Scanner(new InputStreamReader(this.socket.getInputStream()));
+            this.out = new PrintWriter(new OutputStreamWriter(this.socket.getOutputStream()));
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    public Server getServer() {
+        return server;
     }
 
     public User getUser() {
@@ -39,17 +57,6 @@ public class ServerUser extends Thread{
 
     public void setUser(User user) {
         this.user = user;
-    }
-
-    public ServerUser(Socket socket) {
-        this.socket = socket;
-        this.setPlaing(false);
-        try {
-            this.in = new Scanner(new InputStreamReader(this.socket.getInputStream()));
-            this.out = new PrintWriter(new OutputStreamWriter(this.socket.getOutputStream()));
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
     }
 
     public ServerUser getOponent() {
@@ -74,14 +81,6 @@ public class ServerUser extends Thread{
 
     public void setPlaing(boolean plaing) {
         isPlaing = plaing;
-    }
-
-    public Socket getSocket() {
-        return socket;
-    }
-
-    public void setSocket(Socket socket) {
-        this.socket = socket;
     }
 
     public void send(String str) {
@@ -144,7 +143,7 @@ public class ServerUser extends Thread{
         }
         this.in.close();
         this.out.close();
-        Server.removeUser(this);
+        server.removeUser(this);
         if(!isNull(this.getOponent())) {
             (new Pass()).doAction(null, this);
         }

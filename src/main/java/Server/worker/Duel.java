@@ -11,7 +11,7 @@ import java.util.ArrayList;
 public class Duel implements Doer {
     @Override
     public void doAction(ArrayList parameters, ServerUser serverUser) {
-        ArrayList<ServerUser> arrayUsers = Server.getConnectedUsers();
+        ArrayList<ServerUser> arrayUsers = serverUser.getServer().getConnectedUsers();
         String result;
         for (ServerUser y : arrayUsers) {
             if (y.getUser().getUserName().equals(parameters.get(1))) {

@@ -12,7 +12,7 @@ import java.util.ArrayList;
 public class QueryUser implements Doer {
     @Override
     public void doAction(ArrayList parameters, ServerUser serverUser) {
-        ArrayList<ServerUser> users = Server.getConnectedUsers();
+        ArrayList<ServerUser> users = serverUser.getServer().getConnectedUsers();
         String result;
         for(ServerUser i : users ){
             if(i.getUser().getUserName().equals(parameters.get(1))){
