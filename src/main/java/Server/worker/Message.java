@@ -14,11 +14,26 @@ public class Message implements Doer {
     @Override
     public void doAction(ArrayList parameters, ServerUser serverUser) {
         String result;
-        result = "<body>\n" +
-                "    <metaInfo>Message</metaInfo>\n" +
-                "    <name>" + serverUser.getUser().getUserName() + "</name>\n" +
-                "    <text>" + parameters.get(1)+ "\n" + "</text>\n" +
-                "</body>";
+        if(parameters.get(1).equals("false")) {
+            result = "<body>\n" +
+                    "    <metaInfo>Message</metaInfo>\n" +
+                    "    <transfer>" +  false + "</transfer>\n" +
+                    "    <name>" + serverUser.getUser().getUserName() + "</name>\n" +
+                    "    <text>" + parameters.get(2) + "</text>\n" +
+                    "</body>";
+        } else {
+            result = "<body>\n" +
+                    " <metaInfo>Message</metaInfo>\n" +
+                    "    <transfer>" +  true + "</transfer>\n" +
+                    "    <name>" + serverUser.getUser().getUserName() + "</name>\n" +
+                    "    <text>" + parameters.get(2) + "</text>\n";
+            StringBuilder sb = new StringBuilder(result);
+            for(int i = 3; i < parameters.size(); i++)
+                sb.append(" <textAdded>" + parameters.get(i) + "</textAdded>\n" );
+            sb.append("</body>");
+            result = sb.toString();
+        }
+
         if(!isNull(serverUser.getOponent())) {
             serverUser.getOponent().send(result);
         } else {
