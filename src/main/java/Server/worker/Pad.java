@@ -26,6 +26,6 @@ public class Pad implements Doer {
         UserJAXB.marshall(serverUser.getServer().getAllUsers());
         (new UserInfo()).sendInfo(serverUser);
         (new UserInfo()).sendInfo(tmp);
-        serverUser.getOponent().send(result);
+        tmp.send(result);
     }
 }
