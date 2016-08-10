@@ -17,7 +17,7 @@ public class Message implements Doer {
         result = "<body>\n" +
                 "    <metaInfo>Message</metaInfo>\n" +
                 "    <name>" + serverUser.getUser().getUserName() + "</name>\n" +
-                "    <text>" + parameters.get(1) + "</text>\n" +
+                "    <text>" + parameters.get(1)+ "\n" + "</text>\n" +
                 "</body>";
         if(!isNull(serverUser.getOponent())) {
             serverUser.getOponent().send(result);

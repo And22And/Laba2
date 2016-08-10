@@ -12,9 +12,9 @@
         <userId>2</userId>
         <userName>a</userName>
         <pasword>a</pasword>
-        <wins>4</wins>
+        <wins>5</wins>
         <loses>4</loses>
-        <playedGames>8</playedGames>
+        <playedGames>9</playedGames>
     </users>
     <users>
         <userId>3</userId>
@@ -29,8 +29,8 @@
         <userName>q</userName>
         <pasword>q</pasword>
         <wins>0</wins>
-        <loses>0</loses>
-        <playedGames>0</playedGames>
+        <loses>1</loses>
+        <playedGames>2</playedGames>
     </users>
     <users>
         <userId>5</userId>
@@ -38,7 +38,7 @@
         <pasword>w</pasword>
         <wins>0</wins>
         <loses>0</loses>
-        <playedGames>0</playedGames>
+        <playedGames>1</playedGames>
     </users>
     <users>
         <userId>6</userId>

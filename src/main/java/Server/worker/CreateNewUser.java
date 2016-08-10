@@ -35,7 +35,6 @@ public class CreateNewUser implements Doer {
                     "    <isCreated>"+ false + "</isCreated>\n" +
                     "</body>";
             serverUser.send(result);
-            //(new CheckInitialize()).doAction(parameters, serverUser);
         }
     }
 }

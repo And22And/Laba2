@@ -11,7 +11,7 @@ public class DoStep implements Doer {
     @Override
     public void doAction(ArrayList parameters, ServerUser serverUser) {
         String result;
-        if(true){ // <--------  It will be change.
+        if(true){
             result = "<body>\n" +
                     "    <metaInfo>DoStep</metaInfo>\n" +
                     "    <positionOf>"+ parameters.get(1) + "</positionOf>\n" +

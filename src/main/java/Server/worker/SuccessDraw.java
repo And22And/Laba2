@@ -24,8 +24,8 @@ public class SuccessDraw implements Doer {
         serverUser.getUser().draw();
         tmp.getUser().draw();
         UserJAXB.marshall(serverUser.getServer().getAllUsers());
-        (new UserInfo()).sendInfo(serverUser);
-        (new UserInfo()).sendInfo(tmp);
+        (new UserInfo()).doAction(null, serverUser);
+        (new UserInfo()).doAction(null, tmp);
         tmp.send(result);
     }
 }

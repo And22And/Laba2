@@ -14,11 +14,11 @@ public class Cancel implements Doer{
         result = "<body>\n" +
                 " <metaInfo>Cancel</metaInfo>\n" +
                 "</body>";
-        serverUser.getOponent().send(result);
         ServerUser tmp = serverUser.getOponent();
         serverUser.setOponent(null);
         tmp.setOponent(null);
         serverUser.setPlaing(false);
         tmp.setPlaing(false);
+        tmp.send(result);
     }
 }
