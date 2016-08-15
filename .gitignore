@@ -46,8 +46,6 @@ Network Trash Folder
 Temporary Items
 .apdisk
 
-git rm --cached <file>
-
 /.idea/*
 /target/*
 /*.gitignore
