@@ -24,13 +24,13 @@ public class Lobby{
 
     public static void doAction(ServerUser serverUser){
         Lobby.LobbyChange("LobbyAddName", serverUser.getUser().getUserName(), serverUser);
-        String str = "<body>\n" +
-                "<metaInfo>" +"LobbyInitialize"+ "</metaInfo>\n";
+        StringBuffer str = new StringBuffer("<body>\n" +
+                "<metaInfo>" +"LobbyInitialize"+ "</metaInfo>\n");
         for(int i = 0; i < serverUser.getServer().getConnectedUsers().size(); i++) {
-            str += "<name>" + serverUser.getServer().getConnectedUsers().get(i).getUser().getUserName() + "</name>\n";
+            str.append("<name>" + serverUser.getServer().getConnectedUsers().get(i).getUser().getUserName() + "</name>\n");
         }
-        str += "</body>";
-        serverUser.send(str);
+        str.append("</body>");
+        serverUser.send(str.toString());
     }
 
 }

@@ -10,13 +10,13 @@ import java.util.ArrayList;
  * Created by User on 28.07.2016.
  */
 public class Mate implements Doer {
+
+    private final static String result =  "<body>\n" +
+            "    <metaInfo>Mate</metaInfo>\n" +
+            "</body>";
+
     @Override
     public void doAction(ArrayList parameters, ServerUser serverUser) {
-        String result;
-        result = "<body>\n" +
-                "    <metaInfo>Mate</metaInfo>\n" +
-                "</body>";
-
         serverUser.getUser().winer();
         serverUser.getOponent().getUser().loser();
         serverUser.setPlaing(false);

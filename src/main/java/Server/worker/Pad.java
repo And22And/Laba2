@@ -10,12 +10,13 @@ import java.util.ArrayList;
  * Created by User on 02.08.2016.
  */
 public class Pad implements Doer {
+
+    private final static String result =  "<body>\n" +
+            "    <metaInfo>Pad</metaInfo>\n" +
+            "</body>";
+
     @Override
     public void doAction(ArrayList parameters, ServerUser serverUser) {
-        String result;
-        result = "<body>\n" +
-                "    <metaInfo>Pad</metaInfo>\n" +
-                "</body>";
         ServerUser tmp = serverUser.getOponent();
         serverUser.setOponent(null);
         tmp.setOponent(null);
