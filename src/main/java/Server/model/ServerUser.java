@@ -105,33 +105,31 @@ public class ServerUser extends Thread{
 
     @Override
     public void run() {
+        String str;
         while (!this.socket.isClosed() && this.in.hasNextLine()) {
-            String str;
-            String result = "";
+            StringBuffer result = new StringBuffer();
             do {
                 str = give();
-                result += str + "\n";
+                result.append(str).append("\n");
             }while(!str.equals("</body>"));
 
-            if(!isNull(result)) {
+            System.out.println(result);
+            SAXParserFactory factory = SAXParserFactory.newInstance();
+            SAXParser saxParser = null;
+            try {
                 System.out.println(result);
-                SAXParserFactory factory = SAXParserFactory.newInstance();
-                SAXParser saxParser = null;
-                try {
-                    System.out.println(result);
-                    saxParser = factory.newSAXParser();
-                    SaxHandler handler = new SaxHandler();
-                    InputSource is = new InputSource(new StringReader(result));
-                    saxParser.parse(is, handler);
-                    System.out.println(handler.getResult());
-                    Parser.callDoer(handler.getResult(), this);
-                } catch (IOException e) {
-                    e.printStackTrace();
-                }catch (ParserConfigurationException e) {
-                    e.printStackTrace();
-                } catch (SAXException e) {
-                    e.printStackTrace();
-                }
+                saxParser = factory.newSAXParser();
+                SaxHandler handler = new SaxHandler();
+                InputSource is = new InputSource(new StringReader(result.toString()));
+                saxParser.parse(is, handler);
+                System.out.println(handler.getResult());
+                Parser.callDoer(handler.getResult(), this);
+            } catch (IOException e) {
+                e.printStackTrace();
+            }catch (ParserConfigurationException e) {
+                e.printStackTrace();
+            } catch (SAXException e) {
+                e.printStackTrace();
             }
         }
         if(!this.socket.isClosed()){
