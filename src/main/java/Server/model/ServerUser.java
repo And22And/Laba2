@@ -1,9 +1,6 @@
 package Server.model;
 
-import Server.model.Parser;
-import Server.model.SaxHandler;
-import Server.model.Server;
-import Server.model.User;
+
 import Server.worker.Pass;
 import org.xml.sax.InputSource;
 import org.xml.sax.SAXException;
@@ -13,7 +10,6 @@ import javax.xml.parsers.SAXParser;
 import javax.xml.parsers.SAXParserFactory;
 import java.io.*;
 import java.net.Socket;
-import java.net.SocketException;
 import java.util.Scanner;
 
 import static java.util.Objects.isNull;
@@ -98,40 +94,36 @@ public class ServerUser extends Thread{
     }
 
     public String give() {
-        String str = "";
-        str = this.in.nextLine();
-        return str;
+        return this.in.nextLine();
     }
 
     @Override
     public void run() {
+        StringBuffer result;
+        String str;
         while (!this.socket.isClosed() && this.in.hasNextLine()) {
-            String str;
-            String result = "";
+            result = new StringBuffer("");
             do {
                 str = give();
-                result += str + "\n";
+                result.append(str).append("\n");
             }while(!str.equals("</body>"));
-
-            if(!isNull(result)) {
+            System.out.println(result);
+            SAXParserFactory factory = SAXParserFactory.newInstance();
+            SAXParser saxParser;
+            try {
                 System.out.println(result);
-                SAXParserFactory factory = SAXParserFactory.newInstance();
-                SAXParser saxParser = null;
-                try {
-                    System.out.println(result);
-                    saxParser = factory.newSAXParser();
-                    SaxHandler handler = new SaxHandler();
-                    InputSource is = new InputSource(new StringReader(result));
-                    saxParser.parse(is, handler);
-                    System.out.println(handler.getResult());
-                    Parser.callDoer(handler.getResult(), this);
-                } catch (IOException e) {
-                    e.printStackTrace();
-                }catch (ParserConfigurationException e) {
-                    e.printStackTrace();
-                } catch (SAXException e) {
-                    e.printStackTrace();
-                }
+                saxParser = factory.newSAXParser();
+                SaxHandler handler = new SaxHandler();
+                InputSource is = new InputSource(new StringReader(result.toString()));
+                saxParser.parse(is, handler);
+                System.out.println(handler.getResult());
+                Parser.callDoer(handler.getResult(), this);
+            } catch (IOException e) {
+                e.printStackTrace();
+            }catch (ParserConfigurationException e) {
+                e.printStackTrace();
+            } catch (SAXException e) {
+                e.printStackTrace();
             }
         }
         if(!this.socket.isClosed()){
