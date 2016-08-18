@@ -1,17 +1,21 @@
 package Server.model;
 
 import Server.worker.Lobby;
+import org.apache.log4j.Logger;
 
-import javax.xml.bind.JAXB;
 import java.io.*;
 import java.net.ServerSocket;
 import java.net.Socket;
 import java.util.ArrayList;
 
+import static java.util.Objects.isNull;
+
 /**
  * Created by Клиент on 05.07.2016.
  */
 public class Server{
+
+    final private static Logger log = Logger.getLogger(Server.class);
 
     private ArrayList<ServerUser> connectedUsers;
     private UserList allUsers;
@@ -40,18 +44,18 @@ public class Server{
         ServerSocket ss = null;
         try {
             ss = new ServerSocket(4444);
-            System.out.println("Server started on port " + 4444);
+            log.info("Server started on port " + 4444);
         } catch (IOException e) {
-            e.printStackTrace();
+            log.error(e);
         }
-        while (true) {
+        while (!isNull(ss) && !ss.isClosed()) {
             try {
                 Socket client = ss.accept();
-                System.out.println("Connected " + client.toString());
+                log.info("Connected " + client.toString());
                 ServerUser user = new ServerUser(client, server);
                 user.start();
             } catch (IOException e) {
-                e.printStackTrace();
+                log.error(e);
             }
         }
     }

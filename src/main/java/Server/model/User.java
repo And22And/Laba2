@@ -5,10 +5,9 @@ import java.text.ParseException;
 
 @XmlRootElement(name = "user")
 @XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(propOrder = {"userId", "userName", "pasword", "wins", "loses", "playedGames"})
+@XmlType(propOrder = {"userName", "pasword", "wins", "loses", "playedGames"})
 public class User {
 
-    private int userId;
     private String userName;
     private String pasword;
     private int wins;
@@ -19,36 +18,15 @@ public class User {
         return playedGames;
     }
 
-    public void setPlayedGames(int playedGames) {
-        this.playedGames = playedGames;
-    }
-
     public int getWins() {
         return wins;
-    }
-
-    public void setWins(int wins) {
-        this.wins = wins;
     }
 
     public int getLoses() {
         return loses;
     }
 
-    public void setLoses(int loses) {
-        this.loses = loses;
-    }
-
-    public User() {
-    }
-
-    public int getUserId() {
-        return userId;
-    }
-
-    public void setUserId(int userId) {
-        this.userId = userId;
-    }
+    public User() {    }
 
     public String getUserName() {
         return userName;
@@ -64,12 +42,6 @@ public class User {
 
     public void setPasword(String pasword) {
         this.pasword = pasword;
-    }
-
-    public void createUser(int id, String name, String pasword) throws ParseException {
-        setUserId(id);
-        setUserName(name);
-        setPasword(pasword);
     }
 
     public void winer() {
@@ -89,9 +61,8 @@ public class User {
     @Override
     public String toString() {
         return "User{" +
-                "userId=" + userId +
-                ", userName='" + userName + '\'' +
-                ", pasword='" + pasword + '\'' +
+                ", userName=\'" + userName + '\'' +
+                ", pasword=\'" + pasword + '\'' +
                 '}';
     }
 }
