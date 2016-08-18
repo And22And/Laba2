@@ -46,13 +46,9 @@ Network Trash Folder
 Temporary Items
 .apdisk
 
-
 /.idea/*
-
 /target/*
-
 /*.gitignore
-
 /*.gitattributes
-
 /*.iml
+

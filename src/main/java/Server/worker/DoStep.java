@@ -11,13 +11,12 @@ public class DoStep implements Doer {
     @Override
     public void doAction(ArrayList parameters, ServerUser serverUser) {
         String result;
-        if(true){
             result = "<body>\n" +
                     "    <metaInfo>DoStep</metaInfo>\n" +
                     "    <positionOf>"+ parameters.get(1) + "</positionOf>\n" +
                     "    <positionInto>"+ parameters.get(2) +"</positionInto>\n" +
                     "</body>";
             serverUser.getOponent().send(result);
-        }
+
     }
 }

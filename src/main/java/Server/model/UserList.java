@@ -10,6 +10,10 @@ public class UserList {
 
     public ArrayList<User> users = new ArrayList<>();
 
+    public void setUsers(ArrayList<User> users) {
+        this.users = users;
+    }
+
     public ArrayList<User> getUsers() {
         return this.users;
     }

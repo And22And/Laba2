@@ -19,12 +19,24 @@ public class User {
         return playedGames;
     }
 
+    public void setPlayedGames(int playedGames) {
+        this.playedGames = playedGames;
+    }
+
     public int getWins() {
         return wins;
     }
 
+    public void setWins(int wins) {
+        this.wins = wins;
+    }
+
     public int getLoses() {
         return loses;
+    }
+
+    public void setLoses(int loses) {
+        this.loses = loses;
     }
 
     public User() {
@@ -52,6 +64,12 @@ public class User {
 
     public void setPasword(String pasword) {
         this.pasword = pasword;
+    }
+
+    public void createUser(int id, String name, String pasword) throws ParseException {
+        setUserId(id);
+        setUserName(name);
+        setPasword(pasword);
     }
 
     public void winer() {

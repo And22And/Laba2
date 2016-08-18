@@ -2,6 +2,7 @@ package Server.model;
 
 import Server.worker.Lobby;
 
+import javax.xml.bind.JAXB;
 import java.io.*;
 import java.net.ServerSocket;
 import java.net.Socket;
