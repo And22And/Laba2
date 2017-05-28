@@ -24,7 +24,7 @@ public class Parser{
         } catch (ClassNotFoundException e) {
 
         }
-        System.out.println(str.toString()); ///////////
+        System.out.println(str.toString());
         if(doer != null) doer.doAction(str, serverUser);
     }
 
